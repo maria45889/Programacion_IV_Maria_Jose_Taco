@@ -1,0 +1,137 @@
+// app/index.tsx — agrega la función Paso4
+import { useWindowDimensions, useColorScheme } from 'react-native'
+import { StyleSheet, Text, View } from 'react-native'
+
+export function Paso4() {
+  const { width, height, scale, fontScale } = useWindowDimensions()
+  const esquema = useColorScheme()   // 'light' | 'dark' | null
+
+  // Paleta dinámica según el tema del sistema
+  const colores = {
+    fondo:   esquema === 'dark' ? '#0d1b2a' : '#f5f5f5',
+    tarjeta: esquema === 'dark' ? '#1a2a3a' : '#ffffff',
+    texto:   esquema === 'dark' ? '#e8eaed' : '#1a1a1a',
+    detalle: esquema === 'dark' ? '#9aa0a6' : '#666666',
+    borde:   esquema === 'dark' ? '#2d3e50' : '#e0e0e0',
+  }
+
+  // Layout adaptativo: 1 columna en pantallas angostas, 2 en anchas
+  const columnas = width > 500 ? 2 : 1
+  const anchoTarjeta = (width - 48 - (columnas - 1) * 12) / columnas
+
+  const equipos = [
+    { modelo: 'Galaxy S24', marca: 'Samsung', estado: 'disponible' },
+    { modelo: 'iPhone 15', marca: 'Apple', estado: 'pocas unidades' },
+    { modelo: 'Redmi Note 13', marca: 'Xiaomi', estado: 'disponible' },
+    { modelo: 'Edge 50', marca: 'Motorola', estado: 'agotado' },
+  ]
+
+  return (
+    <View style={[styles.contenedor, { backgroundColor: colores.fondo }]}>
+      <Text style={[styles.titulo, { color: colores.texto }]}>
+        Catálogo de equipos móviles
+      </Text>
+
+      {/* Información de pantalla */}
+      <View style={[styles.tarjeta, {
+        backgroundColor: colores.tarjeta,
+        borderColor: colores.borde,
+        width: '100%',
+      }]}>
+        <Text style={[styles.etiqueta, { color: colores.detalle }]}>
+          Pantalla: {Math.round(width)} × {Math.round(height)} dp
+          {'  '}·{'  '}escala: {scale.toFixed(1)} · texto: {fontScale.toFixed(1)}
+          {'  '}·{'  '}tema: {esquema ?? 'sin preferencia'}
+        </Text>
+      </View>
+
+      {/* Catálogo con columnas adaptativas */}
+      <View style={{ flexDirection: 'row', flexWrap: 'wrap', gap: 12 }}>
+        {equipos.map(equipo => (
+          <View
+            key={equipo.modelo}
+            style={[styles.tarjeta, {
+              backgroundColor: colores.tarjeta,
+              borderColor: colores.borde,
+              width: anchoTarjeta,
+            }]}
+          >
+            <Text style={[styles.nombreEquipo, { color: colores.texto }]}>
+              {equipo.modelo}
+            </Text>
+            <Text style={[styles.marcaEquipo, { color: colores.detalle }]}>
+              {equipo.marca}
+            </Text>
+            <Text style={{
+              fontSize: 12,
+              fontWeight: '600',
+              color: equipo.estado === 'disponible' ? '#2e7d32' : '#c62828',
+            }}>
+              {equipo.estado.toUpperCase()}
+            </Text>
+          </View>
+        ))}
+      </View>
+
+      {/* Nota sobre useSafeAreaInsets */}
+      <View style={[styles.nota, { borderColor: colores.borde }]}>
+        <Text style={[styles.notaTexto, { color: colores.detalle }]}>
+          💡 useSafeAreaInsets() — disponible desde react-native-safe-area-context
+          (ya visto en Página 2 como SafeAreaView). El hook expone los valores
+          numéricos {'{'}top, bottom, left, right{'}'} para cuando necesitas
+          posicionar elementos manualmente respetando el notch y la barra de inicio.
+        </Text>
+      </View>
+    </View>
+  )
+}
+
+const styles = StyleSheet.create({
+  contenedor: {
+    flex: 1,
+    padding: 24,
+    gap: 16,
+  },
+  titulo: {
+    fontSize: 22,
+    fontWeight: '700',
+    letterSpacing: 0.5,
+  },
+  tarjeta: {
+    padding: 16,
+    borderRadius: 12,
+    borderWidth: 1,
+    shadowColor: '#000',
+    shadowOffset: { width: 0, height: 2 },
+    shadowOpacity: 0.1,
+    shadowRadius: 4,
+    elevation: 2,
+  },
+  etiqueta: {
+    fontSize: 12,
+    fontWeight: '500',
+    fontFamily: 'monospace',
+    textAlign: 'center',
+  },
+  nombreEquipo: {
+    fontSize: 16,
+    fontWeight: '700',
+    marginBottom: 4,
+  },
+  marcaEquipo: {
+    fontSize: 13,
+    fontFamily: 'monospace',
+    marginBottom: 8,
+  },
+  nota: {
+    marginTop: 'auto',
+    padding: 12,
+    borderRadius: 10,
+    borderWidth: 1,
+    backgroundColor: 'rgba(0, 0, 0, 0.03)',
+  },
+  notaTexto: {
+    fontSize: 12,
+    lineHeight: 18,
+  },
+})
