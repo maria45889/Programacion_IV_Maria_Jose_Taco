@@ -1,6 +1,6 @@
 # Programación IV
 
-**Autor:** Antoni Fernandez 
+**Autor:** María José Taco Calle
 
 ---
 
