@@ -4,19 +4,19 @@ import { StyleSheet, Text, View } from 'react-native'
 export default function TabGarantia() {
   return (
     <View style={styles.contenedor}>
-      <Stack.Screen options={{ title: 'Garantía y soporte' }} />
-      <Text style={styles.marca}>COMPRA CON CONFIANZA</Text>
-      <Text style={styles.titulo}>Tu equipo, protegido</Text>
+      <Stack.Screen options={{ title: 'Atención veterinaria' }} />
+      <Text style={styles.marca}>CUIDADO CONFIABLE</Text>
+      <Text style={styles.titulo}>Acompañamos la salud de tu mascota</Text>
       <View style={styles.tarjeta}>
-        <Text style={styles.subtitulo}>Garantía de fábrica</Text>
-        <Text style={styles.item}>12 meses para smartphones nuevos</Text>
+        <Text style={styles.subtitulo}>Historia clínica</Text>
+        <Text style={styles.item}>Registramos consultas, vacunas y recomendaciones.</Text>
       </View>
       <View style={styles.tarjeta}>
-        <Text style={styles.subtitulo}>Devoluciones</Text>
-        <Text style={styles.item}>Tienes 30 días para solicitar un cambio</Text>
+        <Text style={styles.subtitulo}>Medicina preventiva</Text>
+        <Text style={styles.item}>Consulta las fechas de vacunación y controles.</Text>
       </View>
       <View style={styles.tarjeta}>
-        <Text style={styles.subtitulo}>Atención al cliente</Text>
+        <Text style={styles.subtitulo}>Horario de atención</Text>
         <Text style={styles.item}>Lunes a sábado · 9:00 a 18:00</Text>
       </View>
     </View>

@@ -5,16 +5,16 @@ import { Pressable, StyleSheet, Text, View } from 'react-native'
 export default function Inicio() {
   return (
     <View style={styles.contenedor}>
-      <Text style={styles.marca}>MOVITECH</Text>
-      <Text style={styles.titulo}>Tecnología para todos los días</Text>
-      <Text style={styles.subtitulo}>Explora smartphones, ofertas y accesorios.</Text>
+      <Text style={styles.marca}>VETERINARIA HUELLITAS</Text>
+      <Text style={styles.titulo}>Cuidamos la salud de tu mascota</Text>
+      <Text style={styles.subtitulo}>Agenda consultas y conoce nuestros servicios veterinarios.</Text>
       <Link href="/(Tabs)" asChild>
         <Pressable style={styles.boton}>
-          <Text style={styles.textoBoton}>Entrar a la tienda</Text>
+          <Text style={styles.textoBoton}>Conocer el consultorio</Text>
         </Pressable>
       </Link>
       <Link href="/productos" style={styles.enlace}>
-        Ver catálogo de equipos
+        Ver servicios veterinarios
       </Link>
     </View>
   )

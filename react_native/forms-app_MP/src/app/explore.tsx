@@ -1,16 +1,16 @@
 import { ScrollView, StyleSheet, Text, View } from 'react-native'
 
 const beneficios = [
-  ['Compra segura', 'Opciones de pago protegidas en todos los pedidos.'],
-  ['Garantía de fábrica', 'Recibe 12 meses de garantía en smartphones nuevos.'],
-  ['Envío a domicilio', 'Consulta cobertura y tiempos de entrega al realizar tu compra.'],
+  ['Atención veterinaria', 'Agenda consultas para cuidar la salud de tu mascota.'],
+  ['Medicina preventiva', 'Consulta los planes de vacunación y control veterinario.'],
+  ['Acompañamiento', 'Nuestro equipo te orienta sobre el cuidado de tu mascota.'],
 ]
 
 export default function BeneficiosScreen() {
   return (
     <ScrollView style={styles.pantalla} contentContainerStyle={styles.contenido}>
-      <Text style={styles.marca}>MOVITECH</Text>
-      <Text style={styles.titulo}>Tu compra, más fácil</Text>
+      <Text style={styles.marca}>HUELLITAS</Text>
+      <Text style={styles.titulo}>Cuidamos a tu mascota</Text>
       {beneficios.map(([titulo, descripcion]) => (
         <View key={titulo} style={styles.tarjeta}>
           <Text style={styles.subtitulo}>{titulo}</Text>

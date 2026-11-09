@@ -1,41 +1,39 @@
-let nivelCliente: number = 5;
+let edadMascota: number = 5;
 
-if (nivelCliente < 5) {
-    console.log("El cliente puede acceder a un descuento del 10%.");
+if (edadMascota < 1) {
+    console.log("La mascota necesita un control veterinario frecuente.");
 }
 
-if (nivelCliente < 5) {
-    console.log("El cliente puede participar en la promoción del mes.");
+if (edadMascota < 1) {
+    console.log("Se recomienda agendar una consulta para cachorro.");
 } else {
-    console.log("El cliente no aplica para la promoción del mes.");
+    console.log("La mascota puede agendar una consulta general.");
 }
 
-if (nivelCliente >= 16) {
-    console.log("El cliente es premium y recibe atención especial.");
-} else if (nivelCliente >= 8) {
-    console.log("El cliente tiene prioridad en ventas.");
+if (edadMascota >= 10) {
+    console.log("La mascota es senior y requiere atención preventiva.");
+} else if (edadMascota >= 5) {
+    console.log("La mascota está en etapa adulta.");
 } else {
-    console.log("El cliente necesita más compras para obtener beneficios.");
+    console.log("La mascota es joven.");
 }
 
-nivelCliente = 20;
-let montoCompra: number = 2500;
+edadMascota = 6;
+let tieneSintomas: boolean = true;
 
-if (nivelCliente >= 8 && nivelCliente < 16 && montoCompra >= 2000) {
-    console.log("El cliente aplica a descuento por compra mayor.");
-} else if (nivelCliente >= 8) {
-    console.log("El cliente tiene acceso a beneficios de nivel.");
+if (edadMascota >= 5 && edadMascota < 10 && tieneSintomas) {
+    console.log("Se recomienda una consulta veterinaria prioritaria.");
+} else if (edadMascota >= 5) {
+    console.log("Agende un control preventivo.");
 } else {
-    console.log("El cliente no cumple los requisitos.");
+    console.log("Puede solicitar una consulta general.");
 }
 
-nivelCliente = 25;
-montoCompra = 1200;
+edadMascota = 2;
+tieneSintomas = false;
 
-if (nivelCliente >= 8 || montoCompra >= 2000) {
-    console.log("El cliente puede participar en una promoción especial.");
-} else if (nivelCliente >= 8) {
-    console.log("El cliente es preferente.");
+if (edadMascota < 1 || tieneSintomas) {
+    console.log("La mascota requiere una valoración veterinaria.");
 } else {
-    console.log("El cliente no cumple las condiciones.");
+    console.log("La mascota puede continuar con sus controles rutinarios.");
 }

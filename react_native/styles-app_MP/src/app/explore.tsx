@@ -1,20 +1,20 @@
 import { ScrollView, StyleSheet, Text, View } from 'react-native'
 
-const accesorios = [
-  { nombre: 'Nova Buds', detalle: 'Audio inalámbrico para acompañar tus llamadas.' },
-  { nombre: 'Cargador 30 W', detalle: 'Carga rápida para equipos compatibles.' },
-  { nombre: 'Funda Orbit', detalle: 'Protección ligera para el uso diario.' },
+const servicios = [
+  { nombre: 'Vacunación', detalle: 'Prevención veterinaria según la edad y el carnet.' },
+  { nombre: 'Consulta general', detalle: 'Revisión de salud para perros, gatos y otras mascotas.' },
+  { nombre: 'Control preventivo', detalle: 'Seguimiento periódico para el bienestar de tu mascota.' },
 ]
 
 export default function AccesoriosScreen() {
   return (
     <ScrollView style={styles.pantalla} contentContainerStyle={styles.contenido}>
-      <Text style={styles.marca}>MOVITECH · COMPLEMENTOS</Text>
-      <Text style={styles.titulo}>Accesorios para tu móvil</Text>
-      {accesorios.map((accesorio) => (
-        <View key={accesorio.nombre} style={styles.tarjeta}>
-          <Text style={styles.nombre}>{accesorio.nombre}</Text>
-          <Text style={styles.detalle}>{accesorio.detalle}</Text>
+      <Text style={styles.marca}>HUELLITAS · SERVICIOS</Text>
+      <Text style={styles.titulo}>Atención para tu mascota</Text>
+      {servicios.map((servicio) => (
+        <View key={servicio.nombre} style={styles.tarjeta}>
+          <Text style={styles.nombre}>{servicio.nombre}</Text>
+          <Text style={styles.detalle}>{servicio.detalle}</Text>
         </View>
       ))}
     </ScrollView>

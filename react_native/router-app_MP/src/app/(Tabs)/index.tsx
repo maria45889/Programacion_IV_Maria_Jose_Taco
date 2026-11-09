@@ -5,14 +5,14 @@ import { Pressable, StyleSheet, Text, View } from 'react-native'
 export default function TabInicio() {
   return (
     <View style={styles.contenedor}>
-      <Stack.Screen options={{ title: 'MoviTech · Tienda' }} />
-      <Text style={styles.marca}>CATÁLOGO DE TEMPORADA</Text>
-      <Text style={styles.titulo}>Estrena tecnología</Text>
-      <Text style={styles.dato}>12 equipos disponibles</Text>
-      <Text style={styles.dato}>Envío gratis desde $500</Text>
+      <Stack.Screen options={{ title: 'Huellitas · Consultorio' }} />
+      <Text style={styles.marca}>ATENCIÓN VETERINARIA</Text>
+      <Text style={styles.titulo}>Cuidado para cada etapa</Text>
+      <Text style={styles.dato}>Consultas, vacunas y controles preventivos</Text>
+      <Text style={styles.dato}>Atención para perros, gatos y otras mascotas</Text>
       <Link href="/productos" asChild>
         <Pressable style={styles.boton}>
-          <Text style={styles.textoBoton}>Explorar equipos</Text>
+          <Text style={styles.textoBoton}>Ver servicios</Text>
         </Pressable>
       </Link>
     </View>

@@ -2,17 +2,17 @@
 import { useState, useEffect } from 'react'
 import { StyleSheet, Text, View, Pressable } from 'react-native'
 
-type EstadoInventario = 'actualizando' | 'disponible' | 'agotado' | 'inactivo'
+type EstadoAgenda = 'actualizando' | 'disponible' | 'completa' | 'inactiva'
 
 export function Paso2() {
     const [unidades, setUnidades] = useState<number | null>(null)
-    const [estado, setEstado] = useState<EstadoInventario>('inactivo')
+    const [estado, setEstado] = useState<EstadoAgenda>('inactiva')
     const [activo, setActivo] = useState<boolean>(false)
     const [ciclos, setCiclos] = useState<number>(0)
     const [eventosSinStock, setEventosSinStock] = useState<number>(0)
 
     useEffect(() => {
-        if (!activo) return   // no actualizar el inventario si está detenido
+        if (!activo) return   // no actualizar la agenda si está detenida
 
         const intervalo = setInterval(() => {
             setEstado('actualizando')
@@ -21,7 +21,7 @@ export function Paso2() {
                 const falla = Math.random() < 0.15
                 if (falla) {
                     setUnidades(null)
-                    setEstado('agotado')
+                    setEstado('completa')
                     setEventosSinStock(prev => prev + 1)
                 } else {
                     setUnidades(Math.floor(Math.random() * 20) + 1)
@@ -35,16 +35,16 @@ export function Paso2() {
         return () => clearInterval(intervalo)
     }, [activo])   // se re-ejecuta cuando 'activo' cambia
 
-    const colorEstado: Record<EstadoInventario, string> = {
+    const colorEstado: Record<EstadoAgenda, string> = {
         actualizando: '#1565c0',
         disponible: '#2e7d32',
-        agotado: '#c62828',
-        inactivo: '#757575',
+        completa: '#c62828',
+        inactiva: '#757575',
     }
 
     return (
         <View style={styles.contenedor}>
-            <Text style={styles.titulo}>Inventario — Galaxy S24</Text>
+            <Text style={styles.titulo}>Sala de espera · Huellitas</Text>
 
             <View style={styles.tarjeta}>
                 <Text style={[styles.etiqueta, { color: colorEstado[estado] }]}>
@@ -56,14 +56,14 @@ export function Paso2() {
                 </Text>
 
                 <Text style={styles.ciclos}>
-                    Sin stock:{' '}
+                    Agenda completa:{' '}
                     {ciclos > 0
                         ? `${((eventosSinStock / ciclos) * 100).toFixed(1)}%`
                         : '0.0%'}
                 </Text>
 
                 <Text style={styles.ciclos}>Actualizaciones: {ciclos}</Text>
-                <Text style={styles.detalle}>Samsung · precio $899</Text>
+                <Text style={styles.detalle}>Próximo turno · Consulta general</Text>
             </View>
 
             <Pressable
@@ -75,7 +75,7 @@ export function Paso2() {
                 onPress={() => setActivo(a => !a)}
             >
                 <Text style={styles.textoBoton}>
-                    {activo ? 'Detener actualización' : 'Actualizar inventario'}
+                    {activo ? 'Detener actualización' : 'Actualizar sala de espera'}
                 </Text>
             </Pressable>
         </View>

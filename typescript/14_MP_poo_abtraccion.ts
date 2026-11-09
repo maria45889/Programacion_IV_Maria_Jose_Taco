@@ -1,55 +1,55 @@
-abstract class Producto {
-    abstract vender(): void;
+abstract class ServicioVeterinario {
+    abstract realizar(): void;
 
     mostrarDisponibilidad(): void {
-        console.log("Producto disponible para la venta.");
+        console.log("Servicio disponible en el consultorio.");
     }
 }
 
-class Smartphone extends Producto {
-    vender(): void {
-        console.log("Smartphone vendido.");
+class ConsultaGeneral extends ServicioVeterinario {
+    realizar(): void {
+        console.log("Consulta general realizada.");
     }
 }
 
-class Tablet extends Producto {
-    vender(): void {
-        console.log("Tablet vendida.");
+class Vacunacion extends ServicioVeterinario {
+    realizar(): void {
+        console.log("Vacunación registrada.");
     }
 }
 
-const productos: Producto[] = [
-    new Smartphone(),
-    new Tablet()
+const servicios: ServicioVeterinario[] = [
+    new ConsultaGeneral(),
+    new Vacunacion()
 ];
 
-console.log(productos);
-productos.forEach(producto => producto.vender());
+console.log(servicios);
+servicios.forEach(servicio => servicio.realizar());
 
-abstract class Accesorio {
+abstract class Paciente {
     abstract describir(): void;
 
-    consultarStock(): void {
-        console.log("Consultando el stock del accesorio.");
+    consultarHistoria(): void {
+        console.log("Consultando la historia clínica de la mascota.");
     }
 }
 
-class Audifonos extends Accesorio {
+class Perro extends Paciente {
     describir(): void {
-        console.log("Audífonos inalámbricos para equipos móviles.");
+        console.log("Paciente canino registrado.");
     }
 }
 
-class Cargador extends Accesorio {
+class Gato extends Paciente {
     describir(): void {
-        console.log("Cargador rápido para equipos móviles.");
+        console.log("Paciente felino registrado.");
     }
 }
 
-const accesorios: Accesorio[] = [
-    new Audifonos(),
-    new Cargador()
+const pacientes: Paciente[] = [
+    new Perro(),
+    new Gato()
 ];
 
-console.log(accesorios);
-accesorios.forEach(accesorio => accesorio.describir());
+console.log(pacientes);
+pacientes.forEach(paciente => paciente.describir());

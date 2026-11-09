@@ -39,9 +39,9 @@ export default function TabTwoScreen() {
       contentContainerStyle={[styles.contentContainer, contentPlatformStyle]}>
       <ThemedView style={styles.container}>
         <ThemedView style={styles.titleContainer}>
-          <ThemedText type="subtitle">MoviTech</ThemedText>
+          <ThemedText type="subtitle">Veterinaria Huellitas</ThemedText>
           <ThemedText style={styles.centerText} themeColor="textSecondary">
-            Una tienda de equipos móviles con ejemplos de React Native.
+            Un consultorio veterinario dedicado a la salud de las mascotas.
           </ThemedText>
 
           <ExternalLink href="https://docs.expo.dev" asChild>

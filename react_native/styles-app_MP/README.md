@@ -1,6 +1,6 @@
-# MoviTech Styles
+# Huellitas Styles
 
-Proyecto didáctico de Expo/React Native que aplica Flexbox, unidades dp, diseño responsivo, estilos por plataforma, temas claro/oscuro y áreas seguras a una tienda de equipos móviles.
+Proyecto didáctico de Expo/React Native que aplica Flexbox, unidades dp, diseño responsivo, estilos por plataforma, temas claro/oscuro y áreas seguras a un consultorio veterinario.
 
 ## Ejecutar
 

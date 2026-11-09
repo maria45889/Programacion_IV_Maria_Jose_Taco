@@ -1,22 +1,22 @@
 // ─── Paso 1 — Props tipadas ──────────────────────────────────────────
 import { StyleSheet, Text, View } from 'react-native'
 
-interface TarjetaEquipoProps {
-  modelo: string
-  marca: string
-  almacenamiento: string
-  precio: number
-  garantia?: string
+interface TarjetaPacienteProps {
+  nombre: string
+  especie: string
+  raza: string
+  edad: number
+  vacunas?: string
 }
 
-function TarjetaEquipo({ modelo, marca, almacenamiento, precio, garantia }: TarjetaEquipoProps) {
+function TarjetaPaciente({ nombre, especie, raza, edad, vacunas }: TarjetaPacienteProps) {
   return (
     <View style={styles.tarjeta}>
-      <Text style={styles.nombreEquipo}>{modelo}</Text>
-      <Text style={styles.datoDireccion}>Marca: {marca}</Text>
-      <Text style={styles.datoSistema}>Almacenamiento: {almacenamiento}</Text>
-      <Text style={styles.datoRegion}>Precio: ${precio}</Text>
-      <Text style={styles.datoRegion}>Garantía: {garantia ?? 'Consultar'}</Text>
+      <Text style={styles.nombreEquipo}>{nombre}</Text>
+      <Text style={styles.datoDireccion}>Especie: {especie}</Text>
+      <Text style={styles.datoSistema}>Raza: {raza}</Text>
+      <Text style={styles.datoRegion}>Edad: {edad} años</Text>
+      <Text style={styles.datoRegion}>Vacunas: {vacunas ?? 'Por revisar'}</Text>
     </View>
   )
 }
@@ -24,26 +24,26 @@ function TarjetaEquipo({ modelo, marca, almacenamiento, precio, garantia }: Tarj
 export function Paso1() {
   return (
     <View style={styles.fondo}>
-      <Text style={styles.encabezado}>Equipos móviles disponibles</Text>
-      <TarjetaEquipo
-        modelo="Galaxy S24"
-        marca="Samsung"
-        almacenamiento="256 GB"
-        precio={899}
-        garantia="12 meses"
+      <Text style={styles.encabezado}>Pacientes de Veterinaria Huellitas</Text>
+      <TarjetaPaciente
+        nombre="Luna"
+        especie="Perro"
+        raza="Labrador"
+        edad={4}
+        vacunas="Al día"
       />
-      <TarjetaEquipo
-        modelo="iPhone 15"
-        marca="Apple"
-        almacenamiento="128 GB"
-        precio={799}
-        garantia="12 meses"
+      <TarjetaPaciente
+        nombre="Michi"
+        especie="Gato"
+        raza="Mestizo"
+        edad={2}
+        vacunas="Al día"
       />
-      <TarjetaEquipo
-        modelo="Redmi Note 13"
-        marca="Xiaomi"
-        almacenamiento="256 GB"
-        precio={249}
+      <TarjetaPaciente
+        nombre="Toby"
+        especie="Conejo"
+        raza="Mini Rex"
+        edad={1}
       />
     </View>
   )

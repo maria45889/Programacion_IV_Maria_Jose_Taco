@@ -1,51 +1,53 @@
-class EquipoMovil {
-    vender(): void {
-        console.log("Venta de equipo móvil registrada.");
+class Mascota {
+    constructor(public nombre: string) {}
+
+    registrarConsulta(): void {
+        console.log(`Consulta de ${this.nombre} registrada.`);
     }
 }
 
-class SmartphonePremium extends EquipoMovil {
-    activarGarantia(): void {
-        console.log("Garantía del smartphone premium activada.");
+class Perro extends Mascota {
+    registrarVacuna(): void {
+        console.log(`Vacuna de ${this.nombre} registrada.`);
     }
 }
 
-class SmartphoneBasico extends EquipoMovil {
-    configurarEquipo(): void {
-        console.log("Smartphone básico configurado.");
+class Gato extends Mascota {
+    registrarDesparasitacion(): void {
+        console.log(`Desparasitación de ${this.nombre} registrada.`);
     }
 }
 
-const premium = new SmartphonePremium();
-premium.vender();
-premium.activarGarantia();
+const luna = new Perro("Luna");
+luna.registrarConsulta();
+luna.registrarVacuna();
 
-const basico = new SmartphoneBasico();
-basico.vender();
-basico.configurarEquipo();
+const michi = new Gato("Michi");
+michi.registrarConsulta();
+michi.registrarDesparasitacion();
 
-class Accesorio {
-    vender(): void {
-        console.log("Venta de accesorio registrada.");
+class ServicioVeterinario {
+    registrar(): void {
+        console.log("Servicio veterinario registrado.");
     }
 }
 
-class Audifonos extends Accesorio {
-    conectarBluetooth(): void {
-        console.log("Audífonos conectados por Bluetooth.");
+class Consulta extends ServicioVeterinario {
+    emitirDiagnostico(): void {
+        console.log("Diagnóstico de consulta emitido.");
     }
 }
 
-class Cargador extends Accesorio {
-    cargarEquipo(): void {
-        console.log("Equipo conectado al cargador.");
+class Vacunacion extends ServicioVeterinario {
+    actualizarCarnet(): void {
+        console.log("Carnet de vacunación actualizado.");
     }
 }
 
-const audifonos = new Audifonos();
-audifonos.vender();
-audifonos.conectarBluetooth();
+const consulta = new Consulta();
+consulta.registrar();
+consulta.emitirDiagnostico();
 
-const cargador = new Cargador();
-cargador.vender();
-cargador.cargarEquipo();
+const vacunacion = new Vacunacion();
+vacunacion.registrar();
+vacunacion.actualizarCarnet();

@@ -5,8 +5,8 @@ export function Paso2() {
 
   return (
     <ScrollView style={styles.pantalla} contentContainerStyle={styles.contenido}>
-      <Text style={styles.titulo}>Tamaños del catálogo</Text>
-      <Text style={styles.seccion}>Medidas fijas en dp</Text>
+      <Text style={styles.titulo}>Tamaños de tarjetas de pacientes</Text>
+      <Text style={styles.seccion}>Tamaños de fichas en dp</Text>
       <View style={styles.fila}>
         {[32, 48, 64, 80].map((dp) => (
           <View key={dp} style={[styles.cuadrado, { width: dp, height: dp }]}>
@@ -15,7 +15,7 @@ export function Paso2() {
         ))}
       </View>
 
-      <Text style={styles.seccion}>Ancho relativo al contenedor</Text>
+      <Text style={styles.seccion}>Ancho relativo a la ficha clínica</Text>
       {(['100%', '75%', '50%', '25%'] as const).map((ancho) => (
         <View key={ancho} style={[styles.barra, { width: ancho }]}>
           <Text style={styles.textoBlanco}>{ancho}</Text>

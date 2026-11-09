@@ -1,40 +1,40 @@
-interface EquipoMovil {
-    modelo: string;
-    gama: string;
-    mostrarCaracteristicas(): void;
-    registrarVenta(): void;
+interface PacienteVeterinario {
+    nombre: string;
+    especie: string;
+    mostrarFicha(): void;
+    registrarConsulta(): void;
 }
 
-class SamsungGalaxy implements EquipoMovil {
-    modelo = "Samsung Galaxy S24";
-    gama = "Premium";
+class Perro implements PacienteVeterinario {
+    nombre = "Luna";
+    especie = "Perro";
 
-    mostrarCaracteristicas(): void {
-        console.log(`${this.modelo}: pantalla AMOLED y cámara de alta resolución.`);
+    mostrarFicha(): void {
+        console.log(`${this.nombre}: paciente ${this.especie.toLowerCase()}.`);
     }
 
-    registrarVenta(): void {
-        console.log(`Venta registrada: ${this.modelo}.`);
-    }
-}
-
-class IPhone implements EquipoMovil {
-    modelo = "iPhone 15";
-    gama = "Premium";
-
-    mostrarCaracteristicas(): void {
-        console.log(`${this.modelo}: sistema iOS y cámara avanzada.`);
-    }
-
-    registrarVenta(): void {
-        console.log(`Venta registrada: ${this.modelo}.`);
+    registrarConsulta(): void {
+        console.log(`Consulta veterinaria registrada para ${this.nombre}.`);
     }
 }
 
-const samsung = new SamsungGalaxy();
-const iphone = new IPhone();
+class Gato implements PacienteVeterinario {
+    nombre = "Michi";
+    especie = "Gato";
 
-samsung.mostrarCaracteristicas();
-samsung.registrarVenta();
-iphone.mostrarCaracteristicas();
-iphone.registrarVenta();
+    mostrarFicha(): void {
+        console.log(`${this.nombre}: paciente ${this.especie.toLowerCase()}.`);
+    }
+
+    registrarConsulta(): void {
+        console.log(`Consulta veterinaria registrada para ${this.nombre}.`);
+    }
+}
+
+const luna = new Perro();
+const michi = new Gato();
+
+luna.mostrarFicha();
+luna.registrarConsulta();
+michi.mostrarFicha();
+michi.registrarConsulta();

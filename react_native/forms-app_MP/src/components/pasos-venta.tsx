@@ -13,39 +13,38 @@ import {
   View,
 } from 'react-native'
 
-type Producto = {
+type Servicio = {
   id: string
   nombre: string
-  marca: string
+  categoria: string
   precio: number
-  stock: number
 }
 
-const PRODUCTOS: Producto[] = [
-  { id: '1', nombre: 'Nova X Pro', marca: 'Nova', precio: 899, stock: 7 },
-  { id: '2', nombre: 'Nova X', marca: 'Nova', precio: 729, stock: 4 },
-  { id: '3', nombre: 'PixelWave 8', marca: 'PixelWave', precio: 649, stock: 12 },
-  { id: '4', nombre: 'PixelWave 8 Pro', marca: 'PixelWave', precio: 949, stock: 2 },
-  { id: '5', nombre: 'Zenith A5', marca: 'Zenith', precio: 399, stock: 9 },
-  { id: '6', nombre: 'Orbit Mini', marca: 'Orbit', precio: 279, stock: 5 },
+const SERVICIOS: Servicio[] = [
+  { id: '1', nombre: 'Consulta general', categoria: 'Consultas', precio: 25 },
+  { id: '2', nombre: 'Consulta especializada', categoria: 'Consultas', precio: 40 },
+  { id: '3', nombre: 'Vacunación', categoria: 'Prevención', precio: 18 },
+  { id: '4', nombre: 'Desparasitación', categoria: 'Prevención', precio: 12 },
+  { id: '5', nombre: 'Limpieza dental', categoria: 'Cuidados', precio: 35 },
+  { id: '6', nombre: 'Corte de uñas', categoria: 'Cuidados', precio: 8 },
 ]
 
-const PAGINA_2: Producto[] = [
-  { id: '7', nombre: 'Nova Buds', marca: 'Nova', precio: 89, stock: 15 },
-  { id: '8', nombre: 'Cargador 30 W', marca: 'Orbit', precio: 29, stock: 18 },
+const PAGINA_2: Servicio[] = [
+  { id: '7', nombre: 'Control de cachorro', categoria: 'Consultas', precio: 20 },
+  { id: '8', nombre: 'Control de gato', categoria: 'Consultas', precio: 20 },
 ]
 
 const moneda = (precio: number) => `$${precio.toLocaleString('es-ES')}`
 
-function FilaProducto({ producto }: { producto: Producto }) {
+function FilaServicio({ servicio }: { servicio: Servicio }) {
   return (
     <View style={styles.tarjetaProducto}>
-      <View style={styles.icono}><Text style={styles.iconoTexto}>▣</Text></View>
+      <View style={styles.icono}><Text style={styles.iconoTexto}>🐾</Text></View>
       <View style={styles.infoProducto}>
-        <Text style={styles.nombreProducto}>{producto.nombre}</Text>
-        <Text style={styles.detalle}>{producto.marca} · {producto.stock} disponibles</Text>
+        <Text style={styles.nombreProducto}>{servicio.nombre}</Text>
+        <Text style={styles.detalle}>{servicio.categoria} · Agenda previa</Text>
       </View>
-      <Text style={styles.precio}>{moneda(producto.precio)}</Text>
+      <Text style={styles.precio}>{moneda(servicio.precio)}</Text>
     </View>
   )
 }
@@ -54,25 +53,25 @@ export function Paso1() {
   return (
     <SafeAreaView style={styles.pantalla}>
       <FlatList
-        data={PRODUCTOS}
+        data={SERVICIOS}
         keyExtractor={(item) => item.id}
         contentContainerStyle={styles.lista}
-        ListHeaderComponent={<Text style={styles.titulo}>Catálogo de móviles</Text>}
-        renderItem={({ item }) => <FilaProducto producto={item} />}
+        ListHeaderComponent={<Text style={styles.titulo}>Servicios de Veterinaria Huellitas</Text>}
+        renderItem={({ item }) => <FilaServicio servicio={item} />}
       />
     </SafeAreaView>
   )
 }
 
 export function Paso2() {
-  const [productos, setProductos] = useState(PRODUCTOS)
+  const [servicios, setServicios] = useState(SERVICIOS)
   const [refrescando, setRefrescando] = useState(false)
   const [cargandoMas, setCargandoMas] = useState(false)
   const [pagina, setPagina] = useState(1)
 
   function refrescar() {
     setRefrescando(true)
-    setProductos(PRODUCTOS)
+    setServicios(SERVICIOS)
     setPagina(1)
     setRefrescando(false)
   }
@@ -80,7 +79,7 @@ export function Paso2() {
   function cargarMas() {
     if (pagina > 1 || cargandoMas) return
     setCargandoMas(true)
-    setProductos((actuales) => [...actuales, ...PAGINA_2])
+    setServicios((actuales) => [...actuales, ...PAGINA_2])
     setPagina(2)
     setCargandoMas(false)
   }
@@ -88,26 +87,26 @@ export function Paso2() {
   return (
     <SafeAreaView style={styles.pantalla}>
       <FlatList
-        data={productos}
+        data={servicios}
         keyExtractor={(item) => item.id}
         contentContainerStyle={styles.lista}
-        ListHeaderComponent={<Text style={styles.titulo}>Catálogo · página {pagina}</Text>}
-        renderItem={({ item }) => <FilaProducto producto={item} />}
+        ListHeaderComponent={<Text style={styles.titulo}>Servicios · página {pagina}</Text>}
+        renderItem={({ item }) => <FilaServicio servicio={item} />}
         refreshing={refrescando}
         onRefresh={refrescar}
         onEndReached={cargarMas}
         onEndReachedThreshold={0.3}
-        ListEmptyComponent={<Text style={styles.detalle}>No hay equipos disponibles.</Text>}
-        ListFooterComponent={cargandoMas ? <Text style={styles.detalle}>Cargando más equipos…</Text> : undefined}
+        ListEmptyComponent={<Text style={styles.detalle}>No hay servicios disponibles.</Text>}
+        ListFooterComponent={cargandoMas ? <Text style={styles.detalle}>Cargando más servicios…</Text> : undefined}
       />
     </SafeAreaView>
   )
 }
 
 export function Paso3() {
-  const secciones = ['Nova', 'PixelWave', 'Zenith', 'Orbit'].map((marca) => ({
-    title: marca,
-    data: PRODUCTOS.filter((producto) => producto.marca === marca),
+  const secciones = ['Consultas', 'Prevención', 'Cuidados'].map((categoria) => ({
+    title: categoria,
+    data: SERVICIOS.filter((servicio) => servicio.categoria === categoria),
   }))
 
   return (
@@ -116,30 +115,30 @@ export function Paso3() {
         sections={secciones}
         keyExtractor={(item) => item.id}
         contentContainerStyle={styles.lista}
-        renderItem={({ item }) => <FilaProducto producto={item} />}
+        renderItem={({ item }) => <FilaServicio servicio={item} />}
         renderSectionHeader={({ section }) => (
           <Text style={styles.encabezadoSeccion}>{section.title}</Text>
         )}
         stickySectionHeadersEnabled={false}
-        ListHeaderComponent={<Text style={styles.titulo}>Equipos por marca</Text>}
+        ListHeaderComponent={<Text style={styles.titulo}>Servicios por categoría</Text>}
       />
     </SafeAreaView>
   )
 }
 
 export function Paso4() {
-  const [modelo, setModelo] = useState('')
+  const [mascota, setMascota] = useState('')
   const [telefono, setTelefono] = useState('')
 
   return (
     <SafeAreaView style={styles.pantalla}>
       <ScrollView contentContainerStyle={styles.formulario}>
-        <Text style={styles.titulo}>Solicitar información</Text>
-        <Text style={styles.etiqueta}>Modelo que te interesa</Text>
+        <Text style={styles.titulo}>Solicitar una cita</Text>
+        <Text style={styles.etiqueta}>Nombre de la mascota</Text>
         <TextInput
-          value={modelo}
-          onChangeText={setModelo}
-          placeholder="Ej. Nova X Pro"
+          value={mascota}
+          onChangeText={setMascota}
+          placeholder="Ej. Luna"
           style={styles.campo}
           returnKeyType="next"
         />
@@ -153,7 +152,7 @@ export function Paso4() {
         />
         <View style={styles.vistaPrevia}>
           <Text style={styles.detalle}>
-            Te contactaremos por {telefono || 'tu teléfono'} para hablar sobre {modelo || 'el equipo'}.
+            Te contactaremos al {telefono || 'tu teléfono'} para agendar una cita para {mascota || 'tu mascota'}.
           </Text>
         </View>
       </ScrollView>
@@ -163,8 +162,9 @@ export function Paso4() {
 
 export function Paso5() {
   const [nombre, setNombre] = useState('')
+  const [mascota, setMascota] = useState('')
   const [telefono, setTelefono] = useState('')
-  const [modelo, setModelo] = useState('')
+  const [servicioSeleccionado, setServicioSeleccionado] = useState('')
   const [error, setError] = useState<string | null>(null)
   const [enviado, setEnviado] = useState(false)
 
@@ -177,8 +177,12 @@ export function Paso5() {
       setError('Ingresa un teléfono válido de al menos 8 dígitos.')
       return
     }
-    if (!modelo) {
-      setError('Selecciona el equipo que quieres comprar.')
+    if (!mascota.trim()) {
+      setError('Escribe el nombre de la mascota.')
+      return
+    }
+    if (!servicioSeleccionado) {
+      setError('Selecciona el servicio veterinario.')
       return
     }
     setError(null)
@@ -188,27 +192,28 @@ export function Paso5() {
   return (
     <SafeAreaView style={styles.pantalla}>
       <ScrollView contentContainerStyle={styles.formulario} keyboardShouldPersistTaps="handled">
-        <Text style={styles.titulo}>Prepara tu compra</Text>
+        <Text style={styles.titulo}>Agenda una cita veterinaria</Text>
         <Campo etiqueta="Nombre *" value={nombre} onChangeText={setNombre} placeholder="Tu nombre" />
+        <Campo etiqueta="Nombre de la mascota *" value={mascota} onChangeText={setMascota} placeholder="Ej. Luna" />
         <Campo etiqueta="Teléfono *" value={telefono} onChangeText={setTelefono} placeholder="Tu teléfono" keyboardType="phone-pad" />
-        <Text style={styles.etiqueta}>Equipo *</Text>
+        <Text style={styles.etiqueta}>Servicio *</Text>
         <View style={styles.opciones}>
-          {PRODUCTOS.slice(0, 3).map((producto) => (
+          {SERVICIOS.slice(0, 3).map((servicio) => (
             <Pressable
-              key={producto.id}
-              onPress={() => setModelo(producto.nombre)}
-              style={[styles.opcion, modelo === producto.nombre && styles.opcionActiva]}
+              key={servicio.id}
+              onPress={() => setServicioSeleccionado(servicio.nombre)}
+              style={[styles.opcion, servicioSeleccionado === servicio.nombre && styles.opcionActiva]}
             >
-              <Text style={[styles.textoOpcion, modelo === producto.nombre && styles.textoOpcionActivo]}>
-                {producto.nombre}
+              <Text style={[styles.textoOpcion, servicioSeleccionado === servicio.nombre && styles.textoOpcionActivo]}>
+                {servicio.nombre}
               </Text>
             </Pressable>
           ))}
         </View>
         {error !== null && <Text style={styles.error}>{error}</Text>}
-        {enviado && <Text style={styles.confirmacion}>¡Gracias, {nombre}! Registramos tu interés en {modelo}.</Text>}
+        {enviado && <Text style={styles.confirmacion}>¡Gracias, {nombre}! La cita para {mascota} quedó registrada.</Text>}
         <Pressable accessibilityRole="button" onPress={enviarPedido} style={styles.boton}>
-          <Text style={styles.textoBoton}>Confirmar interés</Text>
+          <Text style={styles.textoBoton}>Confirmar cita</Text>
         </Pressable>
       </ScrollView>
     </SafeAreaView>
@@ -226,7 +231,7 @@ export function Paso6() {
       setMensaje('Completa tu nombre y un teléfono válido para continuar.')
       return
     }
-    setMensaje(`Pedido preparado para ${nombre}. Nos comunicaremos al ${telefono}.`)
+    setMensaje(`Solicitud de cita preparada para ${nombre}. Nos comunicaremos al ${telefono}.`)
   }
 
   return (
@@ -237,24 +242,24 @@ export function Paso6() {
     >
       <SafeAreaView style={styles.pantalla}>
         <View style={styles.cabecera}>
-          <Text style={styles.textoCabecera}>Finaliza tu compra</Text>
-          <Text style={styles.detalleCabecera}>MoviTech · equipos móviles</Text>
+          <Text style={styles.textoCabecera}>Confirma tu solicitud</Text>
+          <Text style={styles.detalleCabecera}>Veterinaria Huellitas · Atención para tu mascota</Text>
         </View>
         <ScrollView contentContainerStyle={styles.formulario} keyboardShouldPersistTaps="handled">
           <Campo etiqueta="Nombre completo" value={nombre} onChangeText={setNombre} placeholder="Tu nombre" />
           <Campo etiqueta="Teléfono" value={telefono} onChangeText={setTelefono} placeholder="Tu teléfono" keyboardType="phone-pad" />
-          <Text style={styles.etiqueta}>Notas para la tienda (opcional)</Text>
+          <Text style={styles.etiqueta}>Motivo de consulta (opcional)</Text>
           <TextInput
             value={notas}
             onChangeText={setNotas}
-            placeholder="Color, capacidad u otra preferencia"
+            placeholder="Síntomas o información importante"
             style={[styles.campo, styles.campoMultilinea]}
             multiline
             textAlignVertical="top"
           />
           {mensaje !== '' && <Text style={styles.detalle}>{mensaje}</Text>}
           <Pressable accessibilityRole="button" onPress={confirmar} style={styles.boton}>
-            <Text style={styles.textoBoton}>Enviar solicitud</Text>
+            <Text style={styles.textoBoton}>Solicitar cita</Text>
           </Pressable>
         </ScrollView>
       </SafeAreaView>

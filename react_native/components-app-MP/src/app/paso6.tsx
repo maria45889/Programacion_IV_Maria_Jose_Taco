@@ -38,7 +38,7 @@ export function Paso6() {
   }
 
   function ejecutarAccion() {
-    const entrada = `[${new Date().toLocaleTimeString()}] ${accionPendiente} para Galaxy S24`
+    const entrada = `[${new Date().toLocaleTimeString()}] ${accionPendiente} para Luna`
     setLog((prev) => [entrada, ...prev])
     setModalVisible(false)
   }
@@ -48,10 +48,10 @@ export function Paso6() {
       {/* Cabecera fija — fuera del scroll */}
       <View style={estilos6.cabecera}>
         <View>
-          <Text style={estilos6.cabNombre}>Galaxy S24</Text>
-          <Text style={estilos6.cabIp}>Samsung · 256 GB · 12 meses de garantía</Text>
+          <Text style={estilos6.cabNombre}>Luna · Paciente</Text>
+          <Text style={estilos6.cabIp}>Perro · Labrador · Responsable: María Pérez</Text>
         </View>
-        <BadgeEstado estado="disponible" mostrarIcono tamaño={12} />
+        <BadgeEstado estado="confirmada" mostrarIcono tamaño={12} />
       </View>
 
       {/* Contenido desplazable */}
@@ -60,43 +60,43 @@ export function Paso6() {
         showsVerticalScrollIndicator={false}
       >
         {/* Card de métricas */}
-        <Card titulo="Características" subtitulo="Smartphone premium">
-          <FilaInfo etiqueta="Pantalla" valor="6.2 pulgadas AMOLED" />
-          <FilaInfo etiqueta="Almacenamiento" valor="256 GB" />
-          <FilaInfo etiqueta="Cámara" valor="50 MP" />
-          <FilaInfo etiqueta="Batería" valor="4000 mAh" />
-          <FilaInfo etiqueta="Precio" valor="$899" />
+        <Card titulo="Historia clínica" subtitulo="Paciente desde 2022">
+          <FilaInfo etiqueta="Especie" valor="Perro" />
+          <FilaInfo etiqueta="Raza" valor="Labrador" />
+          <FilaInfo etiqueta="Edad" valor="4 años" />
+          <FilaInfo etiqueta="Alergias" valor="Ninguna registrada" />
+          <FilaInfo etiqueta="Vacunas" valor="Al día" />
         </Card>
 
-        <Card titulo="Compra y garantía">
-          <FilaInfo etiqueta="Disponibilidad" valor="En stock" />
-          <FilaInfo etiqueta="Garantía" valor="12 meses" />
-          <FilaInfo etiqueta="Formas de pago" valor="Efectivo o tarjeta" />
-          <FilaInfo etiqueta="Entrega" valor="Retiro en tienda" />
-          <FilaInfo etiqueta="Tienda" valor="MoviTech" />
+        <Card titulo="Próxima cita">
+          <FilaInfo etiqueta="Estado" valor="Confirmada" />
+          <FilaInfo etiqueta="Servicio" valor="Consulta general" />
+          <FilaInfo etiqueta="Fecha" valor="Hoy · 10:30" />
+          <FilaInfo etiqueta="Veterinaria" valor="Dra. Ana López" />
+          <FilaInfo etiqueta="Consultorio" valor="Veterinaria Huellitas" />
         </Card>
 
         <Card titulo="Acciones">
           <View style={estilos6.gridAcciones}>
             <BotonAccion
-              etiqueta="Añadir al carrito"
+              etiqueta="Registrar vacuna"
               color="#1565c0"
-              onPress={() => pedirConfirmacion('Añadir al carrito')}
+              onPress={() => pedirConfirmacion('Registro de vacuna')}
             />
             <BotonAccion
-              etiqueta="Comprar ahora"
+              etiqueta="Iniciar consulta"
               color="#b71c1c"
-              onPress={() => pedirConfirmacion('Compra')}
+              onPress={() => pedirConfirmacion('Inicio de consulta')}
             />
             <BotonAccion
-              etiqueta="Consultar garantía"
+              etiqueta="Actualizar historia"
               color="#2e7d32"
-              onPress={() => pedirConfirmacion('Consulta de garantía')}
+              onPress={() => pedirConfirmacion('Actualización de historia clínica')}
             />
             <BotonAccion
-              etiqueta="Consultar equipo"
+              etiqueta="Agendar control"
               color="#6a1b9a"
-              onPress={() => pedirConfirmacion('Consulta del equipo')}
+              onPress={() => pedirConfirmacion('Agenda de control')}
             />
           </View>
         </Card>
@@ -114,7 +114,7 @@ export function Paso6() {
       <ModalConfirm
         visible={modalVisible}
         titulo={`Confirmar: ${accionPendiente}`}
-        mensaje={`¿Confirmas "${accionPendiente}" para el Galaxy S24?`}
+        mensaje={`¿Confirmas "${accionPendiente}" para Luna?`}
         etiquetaConfirmar="Confirmar"
         onConfirmar={ejecutarAccion}
         onCancelar={() => setModalVisible(false)}

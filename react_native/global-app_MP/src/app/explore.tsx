@@ -20,16 +20,16 @@ export default function CarritoScreen() {
 
   return (
     <ScrollView style={styles.pantalla} contentContainerStyle={styles.contenido}>
-      <Text style={styles.marca}>TU COMPRA</Text>
+      <Text style={styles.marca}>HUELLITAS · CUIDADO ANIMAL</Text>
       <Text style={styles.titulo}>Carrito</Text>
       <Text style={styles.subtitulo}>
-        El contenido se conserva al cambiar entre las pestañas de la tienda.
+        Los productos que agregues se conservan al cambiar de pestaña.
       </Text>
 
       {articulos.length === 0 ? (
         <View style={styles.vacio}>
           <Text style={styles.vacioTitulo}>Tu carrito está vacío</Text>
-          <Text style={styles.subtitulo}>Agrega un equipo desde el catálogo.</Text>
+          <Text style={styles.subtitulo}>Agrega un producto de cuidado desde el catálogo.</Text>
         </View>
       ) : (
         <>

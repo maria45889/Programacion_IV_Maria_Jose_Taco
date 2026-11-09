@@ -4,9 +4,9 @@ import { StyleSheet, Text, View } from 'react-native'
 export function Paso1() {
   return (
     <View style={styles.contenedor}>
-      <Text style={styles.titulo}>MoviTech</Text>
-      <Text style={styles.subtitulo}>Venta de equipos móviles</Text>
-      <Text style={styles.detalle}>Smartphones y accesorios para ti</Text>
+      <Text style={styles.titulo}>Veterinaria Huellitas</Text>
+      <Text style={styles.subtitulo}>Consultorio veterinario</Text>
+      <Text style={styles.detalle}>Atención y cuidado para tus mascotas</Text>
     </View>
   )
 }

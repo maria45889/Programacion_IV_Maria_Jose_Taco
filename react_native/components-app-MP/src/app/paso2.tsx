@@ -35,20 +35,20 @@ export function FilaInfo({ etiqueta, valor }: { etiqueta: string; valor: string 
 export function Paso2() {
   return (
     <View style={estilos2.fondo}>
-      <Text style={estilos2.titulo}>Detalle de compra</Text>
+      <Text style={estilos2.titulo}>Ficha clínica</Text>
 
-      <Card titulo="Galaxy S24" subtitulo="Smartphone Samsung">
-        <FilaInfo etiqueta="Almacenamiento" valor="256 GB" />
-        <FilaInfo etiqueta="Pantalla" valor="6.2 pulgadas AMOLED" />
-        <FilaInfo etiqueta="Cámara" valor="50 MP" />
-        <FilaInfo etiqueta="Garantía" valor="12 meses" />
-        <FilaInfo etiqueta="Precio" valor="$899" />
+      <Card titulo="Luna" subtitulo="Paciente canina · Responsable: María Pérez">
+        <FilaInfo etiqueta="Especie" valor="Perro" />
+        <FilaInfo etiqueta="Raza" valor="Labrador" />
+        <FilaInfo etiqueta="Edad" valor="4 años" />
+        <FilaInfo etiqueta="Última consulta" valor="12 de octubre" />
+        <FilaInfo etiqueta="Próximo control" valor="12 de enero" />
       </Card>
 
-      <Card titulo="Opciones de compra">
-        <FilaInfo etiqueta="Disponibilidad" valor="En stock" />
-        <FilaInfo etiqueta="Formas de pago" valor="Efectivo o tarjeta" />
-        <FilaInfo etiqueta="Entrega" valor="Retiro en tienda" />
+      <Card titulo="Atención veterinaria">
+        <FilaInfo etiqueta="Estado" valor="Cita confirmada" />
+        <FilaInfo etiqueta="Servicio" valor="Control preventivo" />
+        <FilaInfo etiqueta="Veterinaria" valor="Dra. Ana López" />
       </Card>
     </View>
   )

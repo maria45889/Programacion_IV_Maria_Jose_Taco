@@ -26,7 +26,7 @@ export default function TabsLayout() {
       <Tabs.Screen
         name="alertas"
         options={{
-          title:      'Promos',
+          title:      'Prevención',
           tabBarIcon: ({ color, size }) => (
             <TabIcon nombre="alertas" color={color ?? '#90a4ae'} size={size} />
           ),
@@ -36,7 +36,7 @@ export default function TabsLayout() {
       <Tabs.Screen
         name="ajustes"
         options={{
-          title:      'Garantía',
+          title:      'Atención',
           tabBarIcon: ({ color, size }) => (
             <TabIcon nombre="ajustes" color={color ?? '#90a4ae'} size={size} />
           ),
@@ -49,9 +49,9 @@ export default function TabsLayout() {
 // Icono simple con texto hasta que se instalen íconos vectoriales
 function TabIcon({ nombre, color, size }: { nombre: string; color: TextStyle['color']; size: number }) {
   const icono: Record<string, string> = {
-    inicio:   '📱',
-    alertas:  '🏷',
-    ajustes:  '🛡',
+    inicio:   '🐾',
+    alertas:  '💉',
+    ajustes:  '🩺',
   }
   return (
     <Text style={{ fontSize: size * 0.8, color }}>{icono[nombre]}</Text>

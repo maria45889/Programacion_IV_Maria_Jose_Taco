@@ -28,23 +28,23 @@ export default function Paso3Suma() {
 
   return (
     <View style={styles.contenedor}>
-      <Text style={styles.titulo}>Total de compra</Text>
+      <Text style={styles.titulo}>Costo de atención veterinaria</Text>
 
       <View style={styles.formulario}>
-        <Text style={styles.etiqueta}>Precio por equipo</Text>
+        <Text style={styles.etiqueta}>Costo de consulta</Text>
         <TextInput
           ref={inputPrecioRef}
           style={styles.input}
           value={precio}
           onChangeText={setPrecio}
-          placeholder="899"
+          placeholder="25"
           placeholderTextColor="#aaa"
           keyboardType="numeric"
           returnKeyType="next"
           onSubmitEditing={() => inputCantidadRef.current?.focus()}
         />
 
-        <Text style={styles.etiqueta}>Cantidad de equipos</Text>
+        <Text style={styles.etiqueta}>Servicios adicionales</Text>
         <TextInput
           ref={inputCantidadRef}
           style={styles.input}
@@ -62,7 +62,7 @@ export default function Paso3Suma() {
         style={({ pressed }) => [styles.boton, styles.botonActivo, pressed && { opacity: 0.75 }]}
         onPress={calcularTotal}
       >
-        <Text style={styles.textoBoton}>Calcular total</Text>
+        <Text style={styles.textoBoton}>Calcular costo total</Text>
       </Pressable>
 
       <Text style={styles.resultadoTexto}>Resultado: {resultado}</Text>

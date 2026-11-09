@@ -1,28 +1,28 @@
 import { router, Stack, useLocalSearchParams } from 'expo-router'
 import { Pressable, ScrollView, StyleSheet, Text, View } from 'react-native'
 
-type FichaProducto = { nombre: string; marca: string; precio: number; memoria: string; pantalla: string; bateria: string; descripcion: string }
+type FichaServicio = { nombre: string; categoria: string; precio: number; duracion: string; dirigidoA: string; incluye: string; descripcion: string }
 
-const PRODUCTOS: Record<string, FichaProducto> = {
-  'nova-x-pro': {
-    nombre: 'Nova X Pro', marca: 'Nova', precio: 899, memoria: '256 GB',
-    pantalla: '6.7 pulgadas OLED', bateria: '5000 mAh', descripcion: 'Cámara de 50 MP y conectividad 5G.',
+const SERVICIOS: Record<string, FichaServicio> = {
+  'consulta-general': {
+    nombre: 'Consulta general', categoria: 'Consulta', precio: 25, duracion: '30 minutos',
+    dirigidoA: 'Perros, gatos y otras mascotas', incluye: 'Revisión física y recomendaciones', descripcion: 'Evaluación veterinaria para conocer el estado general de salud de tu mascota.',
   },
-  'pixelwave-8': {
-    nombre: 'PixelWave 8', marca: 'PixelWave', precio: 649, memoria: '128 GB',
-    pantalla: '6.3 pulgadas OLED', bateria: '4700 mAh', descripcion: 'Fotografía inteligente y carga rápida.',
+  'vacunacion': {
+    nombre: 'Vacunación', categoria: 'Prevención', precio: 18, duracion: '20 minutos',
+    dirigidoA: 'Según especie, edad y carnet', incluye: 'Revisión del carnet y registro de dosis', descripcion: 'Plan preventivo coordinado con el veterinario de acuerdo con la historia clínica.',
   },
-  'zenith-a5': {
-    nombre: 'Zenith A5', marca: 'Zenith', precio: 399, memoria: '128 GB',
-    pantalla: '6.5 pulgadas LCD', bateria: '5000 mAh', descripcion: 'Rendimiento confiable para todo el día.',
+  'desparasitacion': {
+    nombre: 'Desparasitación', categoria: 'Prevención', precio: 12, duracion: '15 minutos',
+    dirigidoA: 'Perros y gatos', incluye: 'Evaluación y orientación sobre la dosis', descripcion: 'Atención preventiva con indicaciones personalizadas del profesional veterinario.',
   },
-  'orbit-mini': {
-    nombre: 'Orbit Mini', marca: 'Orbit', precio: 279, memoria: '64 GB',
-    pantalla: '5.8 pulgadas HD+', bateria: '4000 mAh', descripcion: 'Un equipo compacto, cómodo y ligero.',
+  'control-cachorro': {
+    nombre: 'Control de cachorro', categoria: 'Consulta', precio: 20, duracion: '25 minutos',
+    dirigidoA: 'Cachorros y gatitos', incluye: 'Control de crecimiento y guía de cuidados', descripcion: 'Acompañamiento veterinario durante las primeras etapas de vida.',
   },
-  'nova-x': {
-    nombre: 'Nova X', marca: 'Nova', precio: 729, memoria: '128 GB',
-    pantalla: '6.4 pulgadas OLED', bateria: '4800 mAh', descripcion: 'Diseño elegante con cámara de alta resolución.',
+  'revision-dental': {
+    nombre: 'Revisión dental', categoria: 'Cuidado', precio: 30, duracion: '30 minutos',
+    dirigidoA: 'Perros y gatos', incluye: 'Evaluación de dientes y encías', descripcion: 'Revisión preventiva para orientar el cuidado de la salud oral de tu mascota.',
   },
 }
 
@@ -37,15 +37,15 @@ function FilaDetalle({ etiqueta, valor }: { etiqueta: string; valor: string }) {
 
 export default function DetalleProducto() {
   const { id } = useLocalSearchParams<{ id: string }>()
-  const producto = PRODUCTOS[id ?? '']
+  const servicio = SERVICIOS[id ?? '']
 
-  if (!producto) {
+  if (!servicio) {
     return (
       <View style={styles.centrado}>
         <Stack.Screen options={{ title: 'Equipo no encontrado' }} />
-        <Text style={styles.error}>No encontramos ese equipo.</Text>
+        <Text style={styles.error}>No encontramos ese servicio.</Text>
         <Pressable accessibilityRole="button" onPress={() => router.back()}>
-          <Text style={styles.enlace}>Volver al catálogo</Text>
+          <Text style={styles.enlace}>Volver a servicios</Text>
         </Pressable>
       </View>
     )
@@ -53,23 +53,24 @@ export default function DetalleProducto() {
 
   return (
     <ScrollView style={styles.pantalla} contentContainerStyle={styles.contenido}>
-      <Stack.Screen options={{ title: producto.nombre }} />
+      <Stack.Screen options={{ title: servicio.nombre }} />
       <View style={styles.encabezado}>
-        <Text style={styles.marca}>{producto.marca.toUpperCase()}</Text>
-        <Text style={styles.nombre}>{producto.nombre}</Text>
-        <Text style={styles.descripcion}>{producto.descripcion}</Text>
-        <Text style={styles.precio}>${producto.precio.toLocaleString('es-ES')}</Text>
+        <Text style={styles.marca}>{servicio.categoria.toUpperCase()}</Text>
+        <Text style={styles.nombre}>{servicio.nombre}</Text>
+        <Text style={styles.descripcion}>{servicio.descripcion}</Text>
+        <Text style={styles.precio}>${servicio.precio.toLocaleString('es-ES')}</Text>
       </View>
       <View style={styles.seccion}>
-        <Text style={styles.tituloSeccion}>ESPECIFICACIONES</Text>
-        <FilaDetalle etiqueta="Almacenamiento" valor={producto.memoria} />
-        <FilaDetalle etiqueta="Pantalla" valor={producto.pantalla} />
-        <FilaDetalle etiqueta="Batería" valor={producto.bateria} />
+        <Text style={styles.tituloSeccion}>DETALLES DE ATENCIÓN</Text>
+        <FilaDetalle etiqueta="Duración" valor={servicio.duracion} />
+        <FilaDetalle etiqueta="Dirigido a" valor={servicio.dirigidoA} />
+        <FilaDetalle etiqueta="Incluye" valor={servicio.incluye} />
       </View>
       <View style={styles.seccion}>
-        <Text style={styles.tituloSeccion}>COMPRA SEGURA</Text>
-        <FilaDetalle etiqueta="Garantía" valor="12 meses de fábrica" />
-        <FilaDetalle etiqueta="Envío" valor="Gratis en pedidos seleccionados" />
+        <Text style={styles.tituloSeccion}>AGENDA TU CITA</Text>
+        <FilaDetalle etiqueta="Consultorio" valor="Veterinaria Huellitas" />
+        <FilaDetalle etiqueta="Horario" valor="Lunes a sábado · 9:00 a 18:00" />
+        <FilaDetalle etiqueta="Reserva" valor="Sujeta a disponibilidad" />
       </View>
     </ScrollView>
   )

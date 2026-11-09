@@ -1,6 +1,6 @@
-# MoviTech Hello
+# Huellitas Hello
 
-Proyecto de ejemplo en Expo y React Native para presentar la tienda MoviTech, dedicada a la venta de equipos móviles. Incluye ejemplos básicos de vistas, texto, imágenes y botones.
+Proyecto de ejemplo en Expo y React Native para presentar el consultorio veterinario Huellitas. Incluye ejemplos básicos de vistas, texto, imágenes y botones con información para responsables de mascotas.
 
 This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
 

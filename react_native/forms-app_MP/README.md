@@ -1,6 +1,6 @@
-# MoviTech Forms
+# Huellitas Forms
 
-Aplicación Expo/React Native para aprender listas y formularios con datos de una tienda de equipos móviles. Incluye catálogo, carga de más productos, agrupación por marca, consulta y registro de compra.
+Aplicación Expo/React Native para aprender listas y formularios con datos de un consultorio veterinario. Incluye servicios, carga de más opciones, agrupación por categoría y registro de citas para mascotas.
 
 ## Ejecutar
 

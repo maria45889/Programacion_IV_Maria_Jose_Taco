@@ -2,28 +2,28 @@
 import { StyleSheet, Text, View } from 'react-native'
 // ─── Paso 3 — Props opcionales ───────────────────────────────────────
 
-type EstadoEquipo = 'disponible' | 'pocas unidades' | 'agotado' | 'reservado' | 'descontinuado'
+type EstadoCita = 'confirmada' | 'en espera' | 'en consulta' | 'atendida' | 'cancelada'
 
 interface BadgeEstadoProps {
-  estado: EstadoEquipo
+  estado: EstadoCita
   tamaño?: number          // opcional — valor por defecto: 12
   mostrarIcono?: boolean   // opcional — valor por defecto: false
 }
 
-const COLOR_ESTADO: Record<EstadoEquipo, { fondo: string; texto: string }> = {
-  disponible: { fondo: '#e8f5e9', texto: '#2e7d32' },
-  'pocas unidades': { fondo: '#fff8e1', texto: '#f57f17' },
-  agotado: { fondo: '#f5f5f5', texto: '#616161' },
-  reservado: { fondo: '#e3f2fd', texto: '#1565c0' },
-  descontinuado: { fondo: '#fce4ec', texto: '#c62828' },
+const COLOR_ESTADO: Record<EstadoCita, { fondo: string; texto: string }> = {
+  confirmada: { fondo: '#e8f5e9', texto: '#2e7d32' },
+  'en espera': { fondo: '#fff8e1', texto: '#f57f17' },
+  'en consulta': { fondo: '#e3f2fd', texto: '#1565c0' },
+  atendida: { fondo: '#f5f5f5', texto: '#616161' },
+  cancelada: { fondo: '#fce4ec', texto: '#c62828' },
 }
 
-const ICONO_ESTADO: Record<EstadoEquipo, string> = {
-  disponible: '●',
-  'pocas unidades': '◐',
-  agotado: '○',
-  reservado: '◐',
-  descontinuado: '✕',
+const ICONO_ESTADO: Record<EstadoCita, string> = {
+  confirmada: '●',
+  'en espera': '◐',
+  'en consulta': '◐',
+  atendida: '○',
+  cancelada: '✕',
 }
 
 export function BadgeEstado({
@@ -46,24 +46,22 @@ export function BadgeEstado({
   )
 }
 
-interface FilaEquipoProps {
-  modelo: string
-  marca: string
-  estado: EstadoEquipo
-  precio?: number
+interface FilaCitaProps {
+  mascota: string
+  servicio: string
+  estado: EstadoCita
+  hora: string
 }
 
-function FilaEquipo({ modelo, marca, estado, precio }: FilaEquipoProps) {
+function FilaCita({ mascota, servicio, estado, hora }: FilaCitaProps) {
   return (
     <View style={estilos3.fila}>
       <View style={estilos3.infoIzq}>
-        <Text style={estilos3.nombreEquipo}>{modelo}</Text>
-        <Text style={estilos3.ipTexto}>{marca}</Text>
+        <Text style={estilos3.nombreEquipo}>{mascota}</Text>
+        <Text style={estilos3.ipTexto}>{servicio}</Text>
       </View>
       <View style={estilos3.infoDer}>
-        {precio !== undefined && (
-          <Text style={estilos3.latencia}>${precio}</Text>
-        )}
+        <Text style={estilos3.latencia}>{hora}</Text>
         <BadgeEstado estado={estado} mostrarIcono={false} />
       </View>
     </View>
@@ -73,12 +71,12 @@ function FilaEquipo({ modelo, marca, estado, precio }: FilaEquipoProps) {
 export function Paso3() {
   return (
     <View style={estilos3.fondo}>
-      <Text style={estilos3.titulo}>Disponibilidad en tienda</Text>
-      <FilaEquipo modelo="Galaxy S24" marca="Samsung" estado="disponible" precio={899} />
-      <FilaEquipo modelo="iPhone 15" marca="Apple" estado="pocas unidades" precio={799} />
-      <FilaEquipo modelo="Redmi Note 13" marca="Xiaomi" estado="disponible" precio={249} />
-      <FilaEquipo modelo="Edge 50" marca="Motorola" estado="reservado" precio={399} />
-      <FilaEquipo modelo="Galaxy A15" marca="Samsung" estado="agotado" />
+      <Text style={estilos3.titulo}>Agenda de hoy · Huellitas</Text>
+      <FilaCita mascota="Luna · María Pérez" servicio="Consulta general" estado="confirmada" hora="09:00" />
+      <FilaCita mascota="Michi · Carlos Ruiz" servicio="Vacunación" estado="en espera" hora="09:30" />
+      <FilaCita mascota="Toby · Ana Díaz" servicio="Control" estado="en consulta" hora="10:00" />
+      <FilaCita mascota="Nina · Luis Mora" servicio="Desparasitación" estado="atendida" hora="10:30" />
+      <FilaCita mascota="Coco · Eva León" servicio="Consulta" estado="cancelada" hora="11:00" />
     </View>
   )
 }

@@ -1,12 +1,12 @@
 import { ScrollView, StyleSheet, Text, useWindowDimensions, View } from 'react-native'
 
-const productos = [
-  { id: '1', modelo: 'Nova X Pro', almacenamiento: '256 GB', precio: '$899', stock: 7 },
-  { id: '2', modelo: 'PixelWave 8', almacenamiento: '128 GB', precio: '$649', stock: 12 },
-  { id: '3', modelo: 'Zenith A5', almacenamiento: '128 GB', precio: '$399', stock: 4 },
-  { id: '4', modelo: 'Orbit Mini', almacenamiento: '64 GB', precio: '$279', stock: 0 },
-  { id: '5', modelo: 'Nova X', almacenamiento: '128 GB', precio: '$729', stock: 9 },
-  { id: '6', modelo: 'PixelWave 8 Pro', almacenamiento: '256 GB', precio: '$949', stock: 2 },
+const citas = [
+  { id: '1', mascota: 'Luna', especie: 'Perro · Labrador', servicio: 'Consulta general', hora: '09:00', confirmada: true },
+  { id: '2', mascota: 'Michi', especie: 'Gato · Mestizo', servicio: 'Vacunación', hora: '09:30', confirmada: true },
+  { id: '3', mascota: 'Toby', especie: 'Conejo · Mini Rex', servicio: 'Control preventivo', hora: '10:00', confirmada: true },
+  { id: '4', mascota: 'Nina', especie: 'Perro · Beagle', servicio: 'Desparasitación', hora: '10:30', confirmada: false },
+  { id: '5', mascota: 'Coco', especie: 'Ave · Periquito', servicio: 'Consulta general', hora: '11:00', confirmada: true },
+  { id: '6', mascota: 'Max', especie: 'Perro · Mestizo', servicio: 'Revisión dental', hora: '11:30', confirmada: false },
 ]
 
 export function Paso3() {
@@ -17,16 +17,16 @@ export function Paso3() {
 
   return (
     <ScrollView style={styles.pantalla} contentContainerStyle={styles.contenido}>
-      <Text style={styles.titulo}>Equipos destacados</Text>
+      <Text style={styles.titulo}>Citas veterinarias</Text>
       <Text style={styles.meta}>{width} dp · {columnas} columnas responsivas</Text>
       <View style={[styles.rejilla, { gap }]}>
-        {productos.map((producto) => (
-          <View key={producto.id} style={[styles.tarjeta, { width: anchoTarjeta }]}>
-            <View style={[styles.indicador, { backgroundColor: producto.stock ? '#2e7d32' : '#c62828' }]} />
-            <Text numberOfLines={1} style={styles.modelo}>{producto.modelo}</Text>
-            <Text style={styles.detalle}>{producto.almacenamiento}</Text>
-            <Text style={styles.precio}>{producto.precio}</Text>
-            <Text style={styles.stock}>{producto.stock ? `${producto.stock} en stock` : 'Agotado'}</Text>
+        {citas.map((cita) => (
+          <View key={cita.id} style={[styles.tarjeta, { width: anchoTarjeta }]}>
+            <View style={[styles.indicador, { backgroundColor: cita.confirmada ? '#2e7d32' : '#c62828' }]} />
+            <Text numberOfLines={1} style={styles.modelo}>{cita.mascota}</Text>
+            <Text style={styles.detalle}>{cita.especie}</Text>
+            <Text style={styles.precio}>{cita.hora}</Text>
+            <Text style={styles.stock}>{cita.confirmada ? cita.servicio : 'Cita pendiente'}</Text>
           </View>
         ))}
       </View>

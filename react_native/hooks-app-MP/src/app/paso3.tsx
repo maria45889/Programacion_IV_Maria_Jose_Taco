@@ -10,7 +10,7 @@ export default function Paso3() {
     const inputCantidadRef = useRef<TextInput | null>(null)
 
     const [codigoEquipo, setCodigoEquipo] = useState<string>('')
-    const [cantidad, setCantidad] = useState<string>('1')
+    const [telefono, setTelefono] = useState<string>('')
 
     // Foco automático al montar la pantalla
     useEffect(() => {
@@ -24,37 +24,37 @@ export default function Paso3() {
     function consultarEquipo() {
         intentosSilenciosRef.current += 1   // muta sin re-render
         setUltimaConsulta(
-            `${codigoEquipo || 'equipo'} · cantidad ${cantidad} · consulta #${intentosSilenciosRef.current}`
+            `${codigoEquipo || 'mascota'} · teléfono ${telefono || 'sin registrar'} · consulta #${intentosSilenciosRef.current}`
         )
     }
 
     return (
         <View style={styles.contenedor}>
-            <Text style={styles.titulo}>Consultar disponibilidad</Text>
+            <Text style={styles.titulo}>Consultar cita veterinaria</Text>
 
             <View style={styles.formulario}>
-                <Text style={styles.etiqueta}>Código o modelo del equipo</Text>
+                <Text style={styles.etiqueta}>Nombre de la mascota</Text>
                 <TextInput
                     ref={inputEquipoRef}
                     style={styles.input}
                     value={codigoEquipo}
                     onChangeText={setCodigoEquipo}
-                    placeholder="Galaxy S24"
+                    placeholder="Luna"
                     placeholderTextColor="#aaa"
                     autoCapitalize="none"
                     returnKeyType="next"
                     onSubmitEditing={() => inputCantidadRef.current?.focus()}
                 />
 
-                <Text style={styles.etiqueta}>Cantidad</Text>
+                <Text style={styles.etiqueta}>Teléfono de contacto</Text>
                 <TextInput
                     ref={inputCantidadRef}
                     style={styles.input}
-                    value={cantidad}
-                    onChangeText={setCantidad}
-                    placeholder="1"
+                    value={telefono}
+                    onChangeText={setTelefono}
+                    placeholder="0991234567"
                     placeholderTextColor="#aaa"
-                    keyboardType="number-pad"
+                    keyboardType="phone-pad"
                     returnKeyType="done"
                 />
             </View>
@@ -63,7 +63,7 @@ export default function Paso3() {
                 style={({ pressed }) => [styles.boton, styles.botonActivo, pressed && { opacity: 0.75 }]}
                 onPress={consultarEquipo}
             >
-                <Text style={styles.textoBoton}>Consultar equipo</Text>
+                <Text style={styles.textoBoton}>Consultar disponibilidad</Text>
             </Pressable>
 
             <Text style={styles.detalle}>Última consulta: {ultimaConsulta}</Text>

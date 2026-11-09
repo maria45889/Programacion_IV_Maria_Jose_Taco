@@ -10,7 +10,7 @@ export function Paso1() {
         if (reservado) return
         const nuevoIntento = intentos + 1
         setIntentos(nuevoIntento)
-        // Simula éxito al tercer intento
+        // Simula la confirmación de la cita al tercer intento
         if (nuevoIntento >= 3) {
             setReservado(true)
         }
@@ -22,23 +22,23 @@ export function Paso1() {
     }
 
     const estadoTexto = reservado
-        ? '✓ Equipo reservado'
+        ? '✓ Cita confirmada'
         : `Intento ${intentos} de 3 fallido`
 
     const colorEstado = reservado ? '#2e7d32' : '#c62828'
 
     return (
         <View style={styles.contenedor}>
-            <Text style={styles.titulo}>Reserva de equipo</Text>
+            <Text style={styles.titulo}>Agenda una cita veterinaria</Text>
 
             <View style={[styles.tarjeta, { borderColor: colorEstado }]}>
                 <Text style={[styles.estado, { color: colorEstado }]}>
                     {estadoTexto}
                 </Text>
-                <Text style={styles.detalle}>Galaxy S24 · Samsung · $899</Text>
+                <Text style={styles.detalle}>Luna · Perro · Consulta general</Text>
             </View>
             <Text style={[styles.detalle, { color: colorEstado }]}>
-                {intentos > 0 && !reservado ? 'No se pudo completar la reserva.' : ''}
+                {intentos > 0 && !reservado ? 'No se pudo confirmar la cita.' : ''}
             </Text>
             <Pressable
                 style={({ pressed }) => [
@@ -50,7 +50,7 @@ export function Paso1() {
                 disabled={reservado}
             >
                 <Text style={styles.textoBoton}>
-                    {reservado ? 'Equipo reservado' : 'Reservar equipo'}
+                    {                    reservado ? 'Cita confirmada' : 'Confirmar cita'}
                 </Text>
             </Pressable>
 

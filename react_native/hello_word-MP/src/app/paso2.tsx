@@ -5,19 +5,19 @@ export function Paso2() {
   return (
     <View style={styles.contenedor}>
       <Image
-        source={{ uri: 'https://reactnative.dev/img/tiny_logo.png' }}
+        source={{ uri: 'https://images.unsplash.com/photo-1543466835-00a7907e9de1?w=256&h=256&fit=crop' }}
         style={styles.logo}
       />
-      <Text style={styles.titulo}>Explora nuestro catálogo</Text>
+      <Text style={styles.titulo}>Agenda una cita para tu mascota</Text>
 
       <Pressable
         style={({ pressed }) => [
           styles.boton,
           pressed && styles.botonPresionado,
         ]}
-        onPress={() => Alert.alert('MoviTech', 'Pronto podrás consultar nuestros equipos móviles.')}
+        onPress={() => Alert.alert('Veterinaria Huellitas', 'Pronto podrás agendar una cita veterinaria.')}
       >
-        <Text style={styles.textoBoton}>Consultar catálogo</Text>
+        <Text style={styles.textoBoton}>Agendar consulta</Text>
       </Pressable>
     </View>
   )

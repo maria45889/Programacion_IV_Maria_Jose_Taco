@@ -1,53 +1,53 @@
-function sumarPrecios(precio1: number, precio2: number): number {
-    return precio1 + precio2;
+function sumarCostos(costo1: number, costo2: number): number {
+    return costo1 + costo2;
 }
 
-const totalCompra = sumarPrecios(1000, 2000);
-console.log(`Total de la compra: ${totalCompra}`);
+const totalConsulta = sumarCostos(25, 18);
+console.log(`Total de consulta y vacuna: $${totalConsulta}`);
 
-function mostrarSucursal(nombre: string, ubicacion: string): void {
-    console.log(`Sucursal: ${nombre}, Ubicación: ${ubicacion}`);
-    const equipos: string[] = ["Samsung Galaxy S24", "iPhone 15", "Xiaomi Redmi Note 13"];
-    for (const equipo of equipos) {
-        console.log(`Equipo disponible: ${equipo}`);
+function mostrarConsultorio(nombre: string, ubicacion: string): void {
+    console.log(`Consultorio: ${nombre}, Ubicación: ${ubicacion}`);
+    const servicios: string[] = ["Consulta general", "Vacunación", "Desparasitación"];
+    for (const servicio of servicios) {
+        console.log(`Servicio disponible: ${servicio}`);
     }
 }
 
-mostrarSucursal("MoviTech Centro", "Quito");
+mostrarConsultorio("Huellitas", "Quito");
 
-function consultarVendedor(nombre: string, ventas?: number): void {
-    console.log(`Vendedor: ${nombre}, Ventas del mes: ${ventas}`);
-    if (ventas) {
-        console.log(`${nombre} tiene ventas registradas.`);
+function consultarVeterinaria(nombre: string, citas?: number): void {
+    console.log(`Veterinaria: ${nombre}, Citas del día: ${citas}`);
+    if (citas) {
+        console.log(`${nombre} tiene citas registradas.`);
     } else {
-        console.log(`${nombre} aún no registra ventas.`);
-        ventas = 0;
-        console.log(`Ventas iniciales: ${ventas}.`);
+        console.log(`${nombre} aún no tiene citas registradas.`);
+        citas = 0;
+        console.log(`Citas iniciales: ${citas}.`);
     }
 }
 
-consultarVendedor("Ana López", 12);
-consultarVendedor("Luis Pérez");
+consultarVeterinaria("Dra. Ana López", 12);
+consultarVeterinaria("Dr. Luis Pérez");
 
-function consultarVendedor2(nombre: string, ventas: number = 0): void {
-    console.log(`El vendedor ${nombre} tiene ${ventas} ventas.`);
+function consultarVeterinaria2(nombre: string, citas: number = 0): void {
+    console.log(`La veterinaria ${nombre} tiene ${citas} citas.`);
 }
 
-consultarVendedor2("Ana López", 12);
-consultarVendedor2("Luis Pérez");
+consultarVeterinaria2("Dra. Ana López", 12);
+consultarVeterinaria2("Dr. Luis Pérez");
 
-function aplicarDescuento(precio: number): number {
-    return precio * 0.9;
+function aplicarDescuento(costo: number): number {
+    return costo * 0.9;
 }
 
-const aplicarDescuentoFlecha = (precio: number): number => precio * 0.9;
+const aplicarDescuentoFlecha = (costo: number): number => costo * 0.9;
 
-const precioOriginal = 1000;
-const precioConDescuento = aplicarDescuento(precioOriginal);
-console.log(`Precio original: ${precioOriginal}, precio con descuento: ${precioConDescuento}`);
+const costoOriginal = 50;
+const costoConDescuento = aplicarDescuento(costoOriginal);
+console.log(`Costo original: ${costoOriginal}, costo con descuento: ${costoConDescuento}`);
 
-const precioConDescuentoFlecha = aplicarDescuentoFlecha(precioOriginal);
-console.log(`Precio original: ${precioOriginal}, precio con descuento (flecha): ${precioConDescuentoFlecha}`);
+const descuentoConFlecha = aplicarDescuentoFlecha(costoOriginal);
+console.log(`Costo original: ${costoOriginal}, con descuento (flecha): ${descuentoConFlecha}`);
 
 function formatear(valor: number): string;
 function formatear(valor: string): string;
@@ -62,11 +62,11 @@ function formatear(valor: number | string | boolean): string {
 }
 
 console.log(formatear(123456.789));
-console.log(formatear("Samsung Galaxy S24"));
+console.log(formatear("Consulta veterinaria"));
 console.log(formatear(true));
 console.log(formatear(false));
 
-function crearContadorVentas(inicio: number = 0) {
+function crearContadorCitas(inicio: number = 0) {
     let cuenta = inicio;
     return {
         incrementar: () => ++cuenta,
@@ -76,16 +76,16 @@ function crearContadorVentas(inicio: number = 0) {
     };
 }
 
-const contador1 = crearContadorVentas();
-const contador2 = crearContadorVentas(10);
+const contador1 = crearContadorCitas();
+const contador2 = crearContadorCitas(10);
 
 contador1.incrementar();
 contador1.incrementar();
 contador1.incrementar();
 contador2.decrementar();
 
-console.log(`Contador 1: ${contador1.valor()}`);
-console.log(`Contador 2: ${contador2.valor()}`);
+console.log(`Citas del día: ${contador1.valor()}`);
+console.log(`Citas de la semana: ${contador2.valor()}`);
 
 contador1.resetear();
 console.log(contador1.valor());

@@ -8,13 +8,13 @@ import { Paso4 } from './paso4'
 
 // ┌──────────────────────────────────────────────────────────────────┐
 // │  Cambia este número y guarda (Ctrl+S) para navegar entre pasos. │
-// │  1  Paso 1  useState — intentos de reserva                       │
-// │  2  Paso 2  useEffect — actualización del inventario             │
-// │  3  Paso 3  useRef — formulario de compra                        │
-// │  3.1 Paso 3.1 useRef — cálculo del total de compra               │
-// │  4  Paso 4  Hooks nativos — catálogo adaptativo y tema           │
+// │  1  Paso 1  useState — intentos para agendar una cita             │
+// │  2  Paso 2  useEffect — actualización de la sala de espera       │
+// │  3  Paso 3  useRef — formulario de consulta veterinaria           │
+// │  3.1 Paso 3.1 useRef — cálculo del costo de atención              │
+// │  4  Paso 4  Hooks nativos — pacientes y tema adaptable           │
 // └──────────────────────────────────────────────────────────────────┘
-const PASO = 4
+const PASO: number = 4
 
 export default function Index() {
   switch (PASO) {

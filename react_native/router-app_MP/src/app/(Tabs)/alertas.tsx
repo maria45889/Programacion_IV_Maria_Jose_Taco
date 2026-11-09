@@ -2,15 +2,15 @@ import { Stack } from 'expo-router'
 import { FlatList, StyleSheet, Text, View } from 'react-native'
 
 const OFERTAS = [
-  { id: '1', categoria: 'FIN DE SEMANA', titulo: '15 % en equipos seleccionados', equipo: 'Nova X Pro', color: '#087e8b' },
-  { id: '2', categoria: 'ACCESORIOS', titulo: 'Audífonos con 20 % de descuento', equipo: 'Nova Buds', color: '#7c3aed' },
-  { id: '3', categoria: 'ÚLTIMAS UNIDADES', titulo: 'Precio especial por lanzamiento', equipo: 'PixelWave 8', color: '#d97706' },
+  { id: '1', categoria: 'PREVENCIÓN', titulo: 'Campaña de vacunación para cachorros', servicio: 'Vacunación inicial', color: '#087e8b' },
+  { id: '2', categoria: 'SALUD FELINA', titulo: 'Jornada de control para gatos', servicio: 'Consulta preventiva', color: '#7c3aed' },
+  { id: '3', categoria: 'CUIDADO DENTAL', titulo: 'Revisión dental para tu mascota', servicio: 'Evaluación veterinaria', color: '#d97706' },
 ]
 
 export default function TabPromociones() {
   return (
     <View style={styles.pantalla}>
-      <Stack.Screen options={{ title: 'Ofertas MoviTech' }} />
+      <Stack.Screen options={{ title: 'Campañas de Huellitas' }} />
       <FlatList
         data={OFERTAS}
         keyExtractor={(oferta) => oferta.id}
@@ -19,7 +19,7 @@ export default function TabPromociones() {
           <View style={styles.tarjeta}>
             <Text style={[styles.categoria, { color: item.color }]}>{item.categoria}</Text>
             <Text style={styles.titulo}>{item.titulo}</Text>
-            <Text style={styles.equipo}>Válido para {item.equipo}</Text>
+            <Text style={styles.equipo}>Servicio: {item.servicio}</Text>
           </View>
         )}
       />

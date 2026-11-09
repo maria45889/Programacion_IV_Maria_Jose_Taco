@@ -1,19 +1,25 @@
-class Inventario {
-    private stock: number = 10;
+class HistorialClinico {
+    private vacunasRegistradas: number = 0;
 
-    vender(cantidad: number): void {
-        if (cantidad > 0) {
-            this.stock = Math.max(0, this.stock - cantidad);
+    registrarVacuna(): void {
+        this.vacunasRegistradas += 1;
+        console.log("Vacuna registrada en la historia clínica.");
+    }
+
+    retirarVacunaRegistrada(): void {
+        if (this.vacunasRegistradas > 0) {
+            this.vacunasRegistradas -= 1;
         }
     }
 
-    consultarStock(): number {
-        return this.stock;
+    consultarVacunas(): number {
+        return this.vacunasRegistradas;
     }
 }
 
-const inventario = new Inventario();
-inventario.vender(15);
-console.log(inventario.consultarStock());
-inventario.vender(5);
-console.log(inventario.consultarStock());
+const historial = new HistorialClinico();
+historial.registrarVacuna();
+historial.registrarVacuna();
+console.log(historial.consultarVacunas());
+historial.retirarVacunaRegistrada();
+console.log(historial.consultarVacunas());

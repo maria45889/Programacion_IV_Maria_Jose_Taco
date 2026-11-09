@@ -1,6 +1,6 @@
-# MoviTech Components
+# Huellitas Components
 
-Proyecto de ejemplo en Expo y React Native sobre venta de equipos móviles. Incluye ejemplos de componentes, props, composición, estados, listas desplazables y modales de confirmación.
+Proyecto de ejemplo en Expo y React Native para un consultorio veterinario. Incluye ejemplos de componentes, props, composición, estados, listas desplazables y modales de confirmación con pacientes, citas y servicios veterinarios.
 
 This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
 

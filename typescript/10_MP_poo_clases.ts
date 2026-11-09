@@ -1,37 +1,31 @@
-class EquipoMovil {
-    public modelo: string;
-    public precio: number;
-    public stock: number;
+class Mascota {
+    public nombre: string;
+    public especie: string;
+    public edad: number;
 
     constructor(
-        modelo: string,
-        precio: number,
-        stock: number,
+        nombre: string,
+        especie: string,
+        edad: number,
     ) {
-        this.modelo = modelo;
-        this.precio = precio;
-        this.stock = stock;
+        this.nombre = nombre;
+        this.especie = especie;
+        this.edad = edad;
     }
 
-    vender(): void {
-        if (this.stock > 0) {
-            this.stock -= 1;
-            console.log(`Se vendió un ${this.modelo}.`);
-        }
+    cumplirAnios(): void {
+        this.edad += 1;
+        console.log(`${this.nombre} ahora tiene ${this.edad} años.`);
     }
 
-    reabastecer(): void {
-        this.stock += 10;
-        console.log(`Se reabasteció el inventario de ${this.modelo}.`);
+    mostrarFicha(): void {
+        console.log(`${this.nombre} · ${this.especie} · ${this.edad} años`);
     }
 }
 
-const samsung = new EquipoMovil("Samsung Galaxy S24", 18000, 10);
-const iphone = new EquipoMovil("iPhone 15", 22000, 8);
+const luna = new Mascota("Luna", "Perro", 4);
+const michi = new Mascota("Michi", "Gato", 2);
 
-samsung.vender();
-console.log(iphone.precio);
-iphone.reabastecer();
-console.log(iphone.stock);
-iphone.vender();
-console.log(iphone.stock);
+luna.mostrarFicha();
+michi.cumplirAnios();
+console.log(luna.especie);

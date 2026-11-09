@@ -1,62 +1,62 @@
-let almacenamientoDisponible = 1024;
-let almacenamientoMaximo = 2048;
-while (almacenamientoDisponible < almacenamientoMaximo) {
-    console.log(`Almacenamiento disponible: ${almacenamientoDisponible} GB`);
-    almacenamientoDisponible += 256;
+let vacunasDisponibles = 4;
+let vacunasNecesarias = 10;
+while (vacunasDisponibles < vacunasNecesarias) {
+    console.log(`Vacunas disponibles: ${vacunasDisponibles}`);
+    vacunasDisponibles += 2;
 }
 
-let nivelCliente = 1;
-while (nivelCliente <= 10) {
-    console.log(`Nivel del cliente: ${nivelCliente}`);
-    nivelCliente++;
+let numeroCita = 1;
+while (numeroCita <= 5) {
+    console.log(`Cita atendida: ${numeroCita}`);
+    numeroCita++;
 }
 
-let ventasProcesadas = 0;
-let ventasAprobadas = 0;
-while (ventasProcesadas < 10) {
-    ventasProcesadas++;
-    let ventaAprobada = Math.random() < 0.5;
-    if (ventaAprobada) {
-        ventasAprobadas++;
-        console.log(`Venta ${ventasProcesadas}: Aprobada. Total aprobadas: ${ventasAprobadas}`);
+let pacientesRevisados = 0;
+let controlesCompletados = 0;
+while (pacientesRevisados < 10) {
+    pacientesRevisados++;
+    let controlCompletado = Math.random() < 0.5;
+    if (controlCompletado) {
+        controlesCompletados++;
+        console.log(`Paciente ${pacientesRevisados}: control completado. Total: ${controlesCompletados}`);
     } else {
-        console.log(`Venta ${ventasProcesadas}: Rechazada. Total aprobadas: ${ventasAprobadas}`);
+        console.log(`Paciente ${pacientesRevisados}: control pendiente. Total: ${controlesCompletados}`);
     }
 }
 
-let pedidosAtendidos = 0;
+let mascotasAtendidas = 0;
 do {
-    pedidosAtendidos++;
-    console.log(`Pedidos atendidos: ${pedidosAtendidos}`);
-} while (pedidosAtendidos < 5);
+    mascotasAtendidas++;
+    console.log(`Mascotas atendidas: ${mascotasAtendidas}`);
+} while (mascotasAtendidas < 5);
 
-interface EquipoMovil {
-    modelo: string;
-    tipo: string;
-    precio: number;
+interface Mascota {
+    nombre: string;
+    especie: string;
+    edad: number;
 }
 
-const equiposEnInventario: EquipoMovil[] = [
-    { modelo: "Samsung Galaxy S24", tipo: "Premium", precio: 18000 },
-    { modelo: "iPhone 15", tipo: "Premium", precio: 22000 },
-    { modelo: "Xiaomi Redmi Note 13", tipo: "Gama media", precio: 6500 },
-    { modelo: "Motorola Edge", tipo: "Gama media", precio: 9500 },
-    { modelo: "Nokia C32", tipo: "Básico", precio: 3000 }
+const pacientes: Mascota[] = [
+    { nombre: "Luna", especie: "Perro", edad: 4 },
+    { nombre: "Michi", especie: "Gato", edad: 2 },
+    { nombre: "Toby", especie: "Conejo", edad: 1 },
+    { nombre: "Nina", especie: "Perro", edad: 8 },
+    { nombre: "Coco", especie: "Ave", edad: 3 }
 ];
 
 let indice = 0;
-while (indice < equiposEnInventario.length) {
-    const equipo = equiposEnInventario[indice];
-    if (equipo?.tipo === "Premium") {
+while (indice < pacientes.length) {
+    const mascota = pacientes[indice];
+    if (mascota?.especie === "Ave") {
         indice++;
         continue;
     }
-    if (equipo?.precio < 4000) {
-        console.log(`El equipo ${equipo.modelo} requiere revisar su precio.`);
+    if (mascota && mascota.edad >= 8) {
+        console.log(`La mascota ${mascota.nombre} requiere un control preventivo.`);
         break;
     }
-    if (equipo) {
-        console.log(`Modelo: ${equipo.modelo}, Tipo: ${equipo.tipo}, Precio: ${equipo.precio}`);
+    if (mascota) {
+        console.log(`Nombre: ${mascota.nombre}, Especie: ${mascota.especie}, Edad: ${mascota.edad}`);
     }
     indice++;
 }

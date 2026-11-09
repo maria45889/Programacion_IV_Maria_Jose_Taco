@@ -5,10 +5,10 @@ import { Paso2 } from './paso2'
 
 // ┌──────────────────────────────────────────────────────────────────┐
 // │  Cambia este número y guarda (Ctrl+S) para navegar entre pasos. │
-// │  1  Paso 1  Presentación de una tienda de equipos móviles        │
-// │  2  Paso 2  Imagen y botón de consulta                            │
+// │  1  Paso 1  Presentación del consultorio veterinario             │
+// │  2  Paso 2  Imagen y botón para agendar una cita                  │
 // └──────────────────────────────────────────────────────────────────┘
-const PASO = 2
+const PASO: number = 2
 
 export default function Index() {
   switch (PASO) {

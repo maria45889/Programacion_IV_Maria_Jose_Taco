@@ -1,51 +1,53 @@
 type ID = string | number;
 type Apellido = string;
-type CoordenadasSucursal = [number, number];
+type CoordenadasConsultorio = [number, number];
 type Punto = {
     x: number;
     y: number;
 };
 
-const origen: Punto = { x: 0, y: 0 };
-const idCliente: ID = 12;
-const idProducto: ID = "mov-011";
+const ubicacionConsultorio: Punto = { x: -0.18, y: -78.47 };
+const idResponsable: ID = 12;
+const idMascota: ID = "masc-011";
 
  type Ubicacion3D = Punto & {
     z: number;
 };
 
-const ubicacionAlmacen: Ubicacion3D = { x: 1, y: 2, z: 3 };
+const ubicacionClinica: Ubicacion3D = { x: -0.18, y: -78.47, z: 0 };
 
-interface Cliente {
+interface Responsable {
     readonly id: number;
     nombre: string;
     email: string;
     telefono?: string;
 }
 
-interface Vendedor extends Cliente {
-    cargo: string;
+interface Veterinario extends Responsable {
+    especialidad: string;
 }
 
-const cliente1: Cliente = {
+const responsable1: Responsable = {
     id: 1,
-    nombre: "Lucía",
+    nombre: "Lucía Pérez",
     email: "lucia@email.com"
 };
 
-const cliente2: Cliente = {
+const responsable2: Responsable = {
     id: 2,
-    nombre: "Carlos",
+    nombre: "Carlos Ruiz",
     email: "carlos@email.com",
     telefono: "0991234567"
 };
 
-console.log(cliente1);
-console.log(cliente2);
+console.log(responsable1);
+console.log(responsable2);
 
-const vendedor: Vendedor = {
+const veterinario: Veterinario = {
     id: 3,
     nombre: "Ana López",
-    email: "ana@movitech.com",
-    cargo: "Asesora de ventas"
+    email: "ana@huellitas.com",
+    especialidad: "Medicina general"
 };
+
+console.log(veterinario);

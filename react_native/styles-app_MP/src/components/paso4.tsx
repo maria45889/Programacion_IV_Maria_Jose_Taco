@@ -20,7 +20,7 @@ export function Paso4() {
       <Text style={styles.plataforma}>Plataforma detectada: {Platform.OS}</Text>
       {[1, 2, 3].map((nivel) => (
         <View key={nivel} style={[styles.tarjeta, sombra(nivel as 1 | 2 | 3)]}>
-          <Text style={styles.modelo}>{['Nova X Pro', 'PixelWave 8', 'Zenith A5'][nivel - 1]}</Text>
+          <Text style={styles.modelo}>{['Consulta general', 'Vacunación', 'Control preventivo'][nivel - 1]}</Text>
           <Text style={styles.detalle}>Sombra nivel {nivel} · {Platform.OS}</Text>
         </View>
       ))}

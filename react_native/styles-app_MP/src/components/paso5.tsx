@@ -16,7 +16,7 @@ export function Paso5() {
     <ScrollView style={{ flex: 1, backgroundColor: colores.fondo }} contentContainerStyle={styles.contenido}>
       <View style={styles.cabecera}>
         <View>
-          <Text style={[styles.titulo, { color: colores.texto }]}>MoviTech</Text>
+          <Text style={[styles.titulo, { color: colores.texto }]}>Veterinaria Huellitas</Text>
           <Text style={{ color: colores.sutil }}>Tema del dispositivo: {sistema ?? 'claro'}</Text>
         </View>
         <Pressable
@@ -27,10 +27,10 @@ export function Paso5() {
           <Text style={styles.textoBoton}>Cambiar tema</Text>
         </Pressable>
       </View>
-      {['Nova X Pro', 'PixelWave 8', 'Zenith A5'].map((modelo, index) => (
-        <View key={modelo} style={[styles.tarjeta, { backgroundColor: colores.tarjeta }]}>
-          <Text style={[styles.modelo, { color: colores.texto }]}>{modelo}</Text>
-          <Text style={{ color: colores.sutil }}>{['$899 · 256 GB', '$649 · 128 GB', '$399 · 128 GB'][index]}</Text>
+      {['Consulta general', 'Vacunación', 'Control preventivo'].map((servicio, index) => (
+        <View key={servicio} style={[styles.tarjeta, { backgroundColor: colores.tarjeta }]}>
+          <Text style={[styles.modelo, { color: colores.texto }]}>{servicio}</Text>
+          <Text style={{ color: colores.sutil }}>{['30 min · $25', '20 min · $18', '25 min · $20'][index]}</Text>
         </View>
       ))}
       <Text style={{ color: colores.sutil }}>

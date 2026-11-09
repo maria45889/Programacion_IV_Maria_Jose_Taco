@@ -1,17 +1,17 @@
 import { StyleSheet, Text, View } from 'react-native'
 
-interface TarjetaAccesorioProps {
+interface TarjetaServicioProps {
   nombre: string
   tipo: string
-  compatibilidad: string
+  detalle: string
   precio: number
 }
 
-function TarjetaAccesorio({ nombre, tipo, compatibilidad, precio }: TarjetaAccesorioProps) {
+function TarjetaServicio({ nombre, tipo, detalle, precio }: TarjetaServicioProps) {
   return (
     <View style={styles.tarjeta}>
       <Text style={styles.nombreAccesorio}>{nombre}</Text>
-      <Text style={styles.datoOcupacion}>{tipo} · {compatibilidad}</Text>
+      <Text style={styles.datoOcupacion}>{tipo} · {detalle}</Text>
       <Text style={styles.datoFrase}>Precio: ${precio}</Text>
     </View>
   )
@@ -20,27 +20,27 @@ function TarjetaAccesorio({ nombre, tipo, compatibilidad, precio }: TarjetaAcces
 export function Paso1() {
   return (
     <View style={styles.fondo}>
-      <Text style={styles.encabezado}>Accesorios para equipos móviles</Text>
+      <Text style={styles.encabezado}>Servicios veterinarios</Text>
 
-      <TarjetaAccesorio
-        nombre="Cargador rápido"
-        tipo="25 W"
-        compatibilidad="USB-C"
+      <TarjetaServicio
+        nombre="Consulta general"
+        tipo="Perros y gatos"
+        detalle="Revisión completa"
         precio={25}
       />
 
-      <TarjetaAccesorio
-        nombre="Audífonos inalámbricos"
-        tipo="Bluetooth"
-        compatibilidad="Android y iOS"
-        precio={49}
+      <TarjetaServicio
+        nombre="Vacunación"
+        tipo="Todas las especies"
+        detalle="Según carnet y edad"
+        precio={18}
       />
 
-      <TarjetaAccesorio
-        nombre="Funda protectora"
-        tipo="Antigolpes"
-        compatibilidad="Modelos seleccionados"
-        precio={15}
+      <TarjetaServicio
+        nombre="Desparasitación"
+        tipo="Perros y gatos"
+        detalle="Dosis indicada por el veterinario"
+        precio={12}
       />
     </View>
   )

@@ -1,6 +1,6 @@
-# MoviTech Hooks
+# Huellitas Hooks
 
-Proyecto de ejemplo en Expo y React Native sobre venta de equipos móviles. Incluye ejemplos de `useState`, `useEffect`, `useRef`, dimensiones de pantalla y esquema de color.
+Proyecto de ejemplo en Expo y React Native para un consultorio veterinario. Incluye ejemplos de `useState`, `useEffect`, `useRef`, dimensiones de pantalla y esquema de color aplicados a citas, pacientes y servicios.
 
 This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
 

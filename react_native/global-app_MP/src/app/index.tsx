@@ -17,10 +17,10 @@ export default function CatalogoScreen() {
       keyExtractor={(producto) => producto.id}
       ListHeaderComponent={
         <View style={styles.encabezado}>
-          <Text style={styles.marca}>MOVITECH</Text>
-          <Text style={styles.titulo}>Encuentra tu próximo móvil</Text>
+          <Text style={styles.marca}>VETERINARIA HUELLITAS</Text>
+          <Text style={styles.titulo}>Productos para el cuidado de tu mascota</Text>
           <Text style={styles.subtitulo}>
-            Catálogo y carrito comparten el mismo estado global.
+            Productos y carrito comparten el mismo estado global.
           </Text>
         </View>
       }
@@ -31,7 +31,7 @@ export default function CatalogoScreen() {
         return (
           <View style={styles.tarjeta}>
             <View style={styles.icono}>
-              <Text style={styles.iconoTexto}>▣</Text>
+              <Text style={styles.iconoTexto}>🐾</Text>
             </View>
             <View style={styles.detalles}>
               <Text style={styles.fabricante}>{item.fabricante}</Text>

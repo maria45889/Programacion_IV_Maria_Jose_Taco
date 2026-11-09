@@ -20,16 +20,16 @@ export function Paso4() {
   const anchoTarjeta = (width - 48 - (columnas - 1) * 12) / columnas
 
   const equipos = [
-    { modelo: 'Galaxy S24', marca: 'Samsung', estado: 'disponible' },
-    { modelo: 'iPhone 15', marca: 'Apple', estado: 'pocas unidades' },
-    { modelo: 'Redmi Note 13', marca: 'Xiaomi', estado: 'disponible' },
-    { modelo: 'Edge 50', marca: 'Motorola', estado: 'agotado' },
+    { nombre: 'Luna', especie: 'Perro · Labrador', estado: 'cita confirmada' },
+    { nombre: 'Michi', especie: 'Gato · Mestizo', estado: 'en espera' },
+    { nombre: 'Toby', especie: 'Conejo · Mini Rex', estado: 'cita confirmada' },
+    { nombre: 'Nina', especie: 'Perro · Beagle', estado: 'cita pendiente' },
   ]
 
   return (
     <View style={[styles.contenedor, { backgroundColor: colores.fondo }]}>
       <Text style={[styles.titulo, { color: colores.texto }]}>
-        Catálogo de equipos móviles
+        Pacientes de Veterinaria Huellitas
       </Text>
 
       {/* Información de pantalla */}
@@ -45,11 +45,11 @@ export function Paso4() {
         </Text>
       </View>
 
-      {/* Catálogo con columnas adaptativas */}
+      {/* Pacientes en columnas adaptativas */}
       <View style={{ flexDirection: 'row', flexWrap: 'wrap', gap: 12 }}>
         {equipos.map(equipo => (
           <View
-            key={equipo.modelo}
+            key={equipo.nombre}
             style={[styles.tarjeta, {
               backgroundColor: colores.tarjeta,
               borderColor: colores.borde,
@@ -57,10 +57,10 @@ export function Paso4() {
             }]}
           >
             <Text style={[styles.nombreEquipo, { color: colores.texto }]}>
-              {equipo.modelo}
+              {equipo.nombre}
             </Text>
             <Text style={[styles.marcaEquipo, { color: colores.detalle }]}>
-              {equipo.marca}
+              {equipo.especie}
             </Text>
             <Text style={{
               fontSize: 12,

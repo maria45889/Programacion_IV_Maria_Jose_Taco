@@ -62,8 +62,8 @@ export function Paso5() {
 
   return (
     <SafeAreaView style={estilos5.safeArea}>
-      <Text style={estilos5.titulo}>Compra de equipo móvil</Text>
-      <Text style={estilos5.subtitulo}>Galaxy S24 · Samsung</Text>
+      <Text style={estilos5.titulo}>Cita veterinaria</Text>
+      <Text style={estilos5.subtitulo}>Luna · Perro · Dra. Ana López</Text>
 
       <View style={estilos5.acciones}>
         <Pressable
@@ -73,7 +73,7 @@ export function Paso5() {
             setModalVisible(true)
           }}
         >
-          <Text style={estilos5.textoAccion}>Registrar compra</Text>
+          <Text style={estilos5.textoAccion}>Agendar consulta</Text>
         </Pressable>
       </View>
 
@@ -85,12 +85,12 @@ export function Paso5() {
 
       <ModalConfirm
         visible={modalVisible}
-        titulo="Confirmar compra"
-        mensaje="¿Confirmas la compra del Galaxy S24 por $899?"
-        etiquetaConfirmar="Comprar"
+        titulo="Confirmar cita"
+        mensaje="¿Confirmas la consulta general de Luna para hoy a las 10:30?"
+        etiquetaConfirmar="Agendar"
         onConfirmar={() => {
           setModalVisible(false)
-          setAccionEjecutada('Compra registrada a las ' + new Date().toLocaleTimeString())
+          setAccionEjecutada('Cita de Luna registrada a las ' + new Date().toLocaleTimeString())
         }}
         onCancelar={() => setModalVisible(false)}
       />

@@ -1,25 +1,25 @@
-class EquipoMovil {
-    vender(): void {
-        console.log("Venta de equipo móvil a precio regular.");
+class Mascota {
+    atender(): void {
+        console.log("Atención veterinaria para una mascota.");
     }
 }
 
-class SmartphonePremium extends EquipoMovil {
-    override vender(): void {
-        console.log("Venta de smartphone premium con garantía extendida.");
+class Perro extends Mascota {
+    override atender(): void {
+        console.log("El perro recibe su consulta veterinaria.");
     }
 }
 
-class SmartphoneEconomico extends EquipoMovil {
-    override vender(): void {
-        console.log("Venta de smartphone económico con promoción.");
+class Gato extends Mascota {
+    override atender(): void {
+        console.log("El gato recibe su consulta veterinaria.");
     }
 }
 
-const equipos: EquipoMovil[] = [
-    new SmartphonePremium(),
-    new SmartphoneEconomico()
+const pacientes: Mascota[] = [
+    new Perro(),
+    new Gato()
 ];
 
-console.log(equipos);
-equipos.forEach(equipo => equipo.vender());
+console.log(pacientes);
+pacientes.forEach(mascota => mascota.atender());

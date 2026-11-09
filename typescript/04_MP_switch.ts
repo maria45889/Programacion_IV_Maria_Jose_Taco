@@ -1,58 +1,50 @@
-type EquipoMovil =
-    | "Samsung Galaxy S24"
-    | "iPhone 15"
-    | "Xiaomi Redmi Note 13"
-    | "Motorola Edge"
-    | "Google Pixel 8";
+type Especie = "Perro" | "Gato" | "Conejo" | "Ave" | "Otro";
 
-let equipoSeleccionado = "iPhone 15" as EquipoMovil;
+let especie = "Gato" as Especie;
 
-switch (equipoSeleccionado) {
-    case "Samsung Galaxy S24":
-        console.log("Samsung Galaxy S24 es un equipo premium.");
+switch (especie) {
+    case "Perro":
+        console.log("Servicio recomendado: consulta general para perros.");
         break;
-    case "iPhone 15":
-        console.log("iPhone 15 tiene excelente rendimiento.");
+    case "Gato":
+        console.log("Servicio recomendado: consulta general para gatos.");
         break;
-    case "Xiaomi Redmi Note 13":
-        console.log("Xiaomi Redmi Note 13 es una opción accesible.");
+    case "Conejo":
+        console.log("Servicio recomendado: consulta de animales pequeños.");
         break;
-    case "Motorola Edge":
-        console.log("Motorola Edge tiene buena cámara y batería.");
-        break;
-    case "Google Pixel 8":
-        console.log("Google Pixel 8 destaca por su calidad fotográfica.");
+    case "Ave":
+        console.log("Servicio recomendado: consulta de aves.");
         break;
     default:
-        console.log("Equipo móvil no reconocido.");
+        console.log("Consulte la disponibilidad para esta especie.");
 }
 
-type Teléfonos = "Samsung" | "Apple" | "Xiaomi";
+type Servicio = "Consulta" | "Vacunación" | "Desparasitación";
 
-let marca = "Apple" as Teléfonos;
-let precio = 18000;
-let tieneGarantia = true;
+let servicio = "Vacunación" as Servicio;
+let edadMeses = 4;
+let tieneCarnet = true;
 
-switch (marca) {
-    case "Samsung":
-        if (precio > 15000 && tieneGarantia) {
-            console.log("Samsung es una buena opción premium.");
+switch (servicio) {
+    case "Consulta":
+        if (edadMeses < 12) {
+            console.log("Agende un control para cachorro o gatito.");
         } else {
-            console.log("Samsung no es la mejor opción en este momento.");
+            console.log("Agende una consulta general.");
         }
         break;
-    case "Apple":
-        if (precio > 17000 && tieneGarantia) {
-            console.log("Apple es una excelente compra premium.");
+    case "Vacunación":
+        if (edadMeses >= 2 && tieneCarnet) {
+            console.log("Revise el carnet y agende la vacunación.");
         } else {
-            console.log("Apple no cumple con el presupuesto del cliente.");
+            console.log("Consulte con el veterinario antes de vacunar.");
         }
         break;
-    case "Xiaomi":
-        if (precio > 10000 && tieneGarantia) {
-            console.log("Xiaomi es una compra equilibrada.");
+    case "Desparasitación":
+        if (edadMeses >= 1 && tieneCarnet) {
+            console.log("Solicite una dosis indicada por el veterinario.");
         } else {
-            console.log("Xiaomi no es la mejor elección para este cliente.");
+            console.log("Primero registre la edad y el historial de la mascota.");
         }
         break;
 }

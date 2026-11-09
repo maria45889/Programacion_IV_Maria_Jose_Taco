@@ -1,55 +1,55 @@
-const IVA: number = 0.16;
-const COMISION_VENDEDOR: number = 5;
-const NOMBRE_TIENDA: string = "MoviTech Store";
-const ESTADO_TIENDA: boolean = true;
+const IVA: number = 0.12;
+const PRECIO_CONSULTA: number = 25;
+const NOMBRE_CONSULTORIO: string = "Veterinaria Huellitas";
+const CONSULTORIO_ABIERTO: boolean = true;
 
-console.log("Tienda:", NOMBRE_TIENDA);
+console.log("Consultorio:", NOMBRE_CONSULTORIO);
 console.log("IVA:", IVA);
-console.log("Comisión del vendedor:", COMISION_VENDEDOR, "%");
-console.log("Estado de la tienda:", ESTADO_TIENDA);
+console.log("Precio de consulta:", PRECIO_CONSULTA);
+console.log("Abierto:", CONSULTORIO_ABIERTO);
 
-let cantidadVentas: number = 0;
-console.log(cantidadVentas);
+let citasAtendidas: number = 0;
+console.log(citasAtendidas);
 
-cantidadVentas++;
-console.log(cantidadVentas);
+citasAtendidas++;
+console.log(citasAtendidas);
 
-cantidadVentas += 3;
-console.log(cantidadVentas);
+citasAtendidas += 3;
+console.log(citasAtendidas);
 
-cantidadVentas = cantidadVentas + 2;
-console.log(cantidadVentas);
+citasAtendidas = citasAtendidas + 2;
+console.log(citasAtendidas);
 
-let vendedor: string = "Ana López";
-let hayPromocion: boolean = false;
-console.log(vendedor);
-console.log(hayPromocion);
+let veterinaria: string = "Dra. Ana López";
+let hayTurnoDisponible: boolean = false;
+console.log(veterinaria);
+console.log(hayTurnoDisponible);
 
-let equipos: string[] = ["Samsung Galaxy S24", "iPhone 15", "Xiaomi Redmi Note 13"];
-console.log(equipos);
+let mascotas: string[] = ["Luna (perro)", "Michi (gato)", "Toby (conejo)"];
+console.log(mascotas);
 
-let equipoSeleccionado: string | null = null;
-let modeloDestacado: string | undefined;
+let mascotaSeleccionada: string | null = null;
+let proximaCita: string | undefined;
 
-let stockTotal: bigint = 987654321n;
+let codigoHistoriaClinica: bigint = 987654321n;
 
-let equipo1: symbol = Symbol("Samsung");
-console.log(equipo1.description);
+let paciente1: symbol = Symbol("Luna");
+console.log(paciente1.description);
 
-let equipo2: symbol = Symbol("Samsung");
-console.log(equipo2.description);
-console.log(equipo1 === equipo2);
+let paciente2: symbol = Symbol("Luna");
+console.log(paciente2.description);
+console.log(paciente1 === paciente2);
 
-let celular: {
-    modelo: string;
-    precio: number;
-    stock: number;
-    esPremium: boolean;
+let paciente: {
+    nombre: string;
+    especie: string;
+    edad: number;
+    vacunado: boolean;
 } = {
-    modelo: "iPhone 15",
-    precio: 18999,
-    stock: 12,
-    esPremium: true
+    nombre: "Luna",
+    especie: "Perro",
+    edad: 4,
+    vacunado: true
 };
 
-console.log(celular);
+console.log(paciente);

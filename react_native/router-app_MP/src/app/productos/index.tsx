@@ -1,14 +1,14 @@
 import { Link, router } from 'expo-router'
 import { FlatList, Pressable, StyleSheet, Text, View } from 'react-native'
 
-type Producto = { id: string; nombre: string; marca: string; precio: number; memoria: string }
+type Servicio = { id: string; nombre: string; categoria: string; precio: number; duracion: string }
 
-const PRODUCTOS: Producto[] = [
-  { id: 'nova-x-pro', nombre: 'Nova X Pro', marca: 'Nova', precio: 899, memoria: '256 GB' },
-  { id: 'pixelwave-8', nombre: 'PixelWave 8', marca: 'PixelWave', precio: 649, memoria: '128 GB' },
-  { id: 'zenith-a5', nombre: 'Zenith A5', marca: 'Zenith', precio: 399, memoria: '128 GB' },
-  { id: 'orbit-mini', nombre: 'Orbit Mini', marca: 'Orbit', precio: 279, memoria: '64 GB' },
-  { id: 'nova-x', nombre: 'Nova X', marca: 'Nova', precio: 729, memoria: '128 GB' },
+const SERVICIOS: Servicio[] = [
+  { id: 'consulta-general', nombre: 'Consulta general', categoria: 'Consulta', precio: 25, duracion: '30 min' },
+  { id: 'vacunacion', nombre: 'Vacunación', categoria: 'Prevención', precio: 18, duracion: '20 min' },
+  { id: 'desparasitacion', nombre: 'Desparasitación', categoria: 'Prevención', precio: 12, duracion: '15 min' },
+  { id: 'control-cachorro', nombre: 'Control de cachorro', categoria: 'Consulta', precio: 20, duracion: '25 min' },
+  { id: 'revision-dental', nombre: 'Revisión dental', categoria: 'Cuidado', precio: 30, duracion: '30 min' },
 ]
 
 const moneda = (precio: number) => `$${precio.toLocaleString('es-ES')}`
@@ -17,13 +17,13 @@ export default function ListaProductos() {
   return (
     <View style={styles.pantalla}>
       <FlatList
-        data={PRODUCTOS}
-        keyExtractor={(producto) => producto.id}
+        data={SERVICIOS}
+        keyExtractor={(servicio) => servicio.id}
         contentContainerStyle={styles.lista}
         ListHeaderComponent={
           <View style={styles.encabezado}>
-            <Text style={styles.titulo}>Todos los equipos</Text>
-            <Text style={styles.subtitulo}>Selecciona un móvil para consultar sus detalles.</Text>
+            <Text style={styles.titulo}>Servicios veterinarios</Text>
+            <Text style={styles.subtitulo}>Selecciona un servicio para conocer los detalles de atención.</Text>
           </View>
         }
         renderItem={({ item }) => (
@@ -32,18 +32,18 @@ export default function ListaProductos() {
             style={({ pressed }) => [styles.tarjeta, pressed && styles.presionada]}
             onPress={() => router.push(`/productos/${item.id}`)}
           >
-            <View style={styles.icono}><Text style={styles.iconoTexto}>▣</Text></View>
+            <View style={styles.icono}><Text style={styles.iconoTexto}>🐾</Text></View>
             <View style={styles.info}>
-              <Text style={styles.marca}>{item.marca}</Text>
+              <Text style={styles.marca}>{item.categoria}</Text>
               <Text style={styles.nombre}>{item.nombre}</Text>
-              <Text style={styles.memoria}>{item.memoria} · Ver especificaciones</Text>
+              <Text style={styles.memoria}>{item.duracion} · Ver información</Text>
             </View>
             <Text style={styles.precio}>{moneda(item.precio)}</Text>
           </Pressable>
         )}
         ListFooterComponent={
           <Link href="/(Tabs)" style={styles.enlace}>
-            Volver a la tienda
+            Volver a servicios
           </Link>
         }
       />

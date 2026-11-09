@@ -1,23 +1,23 @@
 import { ScrollView, StyleSheet, Text, View } from 'react-native'
 
-const productos = ['Nova X Pro', 'PixelWave 8', 'Zenith A5', 'Orbit Mini', 'Nova Buds', 'Cargador 30 W']
+const servicios = ['Consulta general', 'Vacunación', 'Desparasitación', 'Control preventivo', 'Revisión dental', 'Corte de uñas']
 
 export function Paso1() {
   return (
     <ScrollView style={styles.pantalla} contentContainerStyle={styles.contenido}>
-      <Text style={styles.titulo}>MoviTech · catálogo</Text>
+      <Text style={styles.titulo}>Huellitas · servicios veterinarios</Text>
       <Text style={styles.etiqueta}>flexDirection: &apos;column&apos;</Text>
       <View style={styles.columna}>
-        {productos.slice(0, 3).map((producto) => (
-          <View key={producto} style={[styles.tarjeta, styles.azul]}>
-            <Text style={styles.texto}>{producto}</Text>
+        {servicios.slice(0, 3).map((servicio) => (
+          <View key={servicio} style={[styles.tarjeta, styles.azul]}>
+            <Text style={styles.texto}>{servicio}</Text>
           </View>
         ))}
       </View>
 
       <Text style={styles.etiqueta}>flexDirection: &apos;row&apos; + space-between</Text>
       <View style={styles.fila}>
-        {['Android', 'iOS', 'Accesorios'].map((categoria, index) => (
+        {['Perros', 'Gatos', 'Otras mascotas'].map((categoria, index) => (
           <View key={categoria} style={[styles.chip, { backgroundColor: ['#087e8b', '#1565c0', '#7c3aed'][index] }]}>
             <Text style={styles.texto}>{categoria}</Text>
           </View>
@@ -27,19 +27,19 @@ export function Paso1() {
       <Text style={styles.etiqueta}>flex proporcional: 2 / 1 / 1</Text>
       <View style={styles.fila}>
         <View style={[styles.cajaFlex, { flex: 2, backgroundColor: '#0f766e' }]}>
-          <Text style={styles.texto}>Smartphones</Text>
+          <Text style={styles.texto}>Consultas</Text>
         </View>
         <View style={[styles.cajaFlex, { flex: 1, backgroundColor: '#14b8a6' }]}>
-          <Text style={styles.texto}>Audio</Text>
+          <Text style={styles.texto}>Vacunas</Text>
         </View>
         <View style={[styles.cajaFlex, { flex: 1, backgroundColor: '#2dd4bf' }]}>
-          <Text style={styles.texto}>Más</Text>
+          <Text style={styles.texto}>Cuidados</Text>
         </View>
       </View>
 
       <Text style={styles.etiqueta}>flexWrap: &apos;wrap&apos; + gap</Text>
       <View style={styles.rejilla}>
-        {['5G', '128 GB', '256 GB', 'OLED', 'Dual SIM', 'Garantía'].map((etiqueta) => (
+        {['Consulta', 'Vacunas', 'Desparasitación', 'Control', 'Higiene', 'Prevención'].map((etiqueta) => (
           <View key={etiqueta} style={styles.etiquetaChip}>
             <Text style={styles.texto}>{etiqueta}</Text>
           </View>

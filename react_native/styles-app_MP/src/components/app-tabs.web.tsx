@@ -20,10 +20,10 @@ export default function AppTabs() {
       <TabList asChild>
         <CustomTabList>
           <TabTrigger name="home" href="/" asChild>
-            <TabButton>Diseño</TabButton>
+            <TabButton>Atención</TabButton>
           </TabTrigger>
           <TabTrigger name="explore" href="/explore" asChild>
-            <TabButton>Tienda</TabButton>
+            <TabButton>Servicios</TabButton>
           </TabTrigger>
         </CustomTabList>
       </TabList>
@@ -49,7 +49,7 @@ export function CustomTabList(props: TabListProps) {
   return (
     <View {...props} style={styles.tabListContainer}>
       <ThemedView type="backgroundElement" style={styles.innerContainer}>
-        <ThemedText type="smallBold" style={styles.brandText}>MoviTech</ThemedText>
+        <ThemedText type="smallBold" style={styles.brandText}>Huellitas</ThemedText>
 
         {props.children}
       </ThemedView>

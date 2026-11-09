@@ -1,7 +1,7 @@
 import { SafeAreaView, useSafeAreaInsets } from 'react-native-safe-area-context'
 import { ScrollView, StyleSheet, Text, View } from 'react-native'
 
-const equipos = ['Nova X Pro · 256 GB', 'PixelWave 8 · 128 GB', 'Zenith A5 · 128 GB', 'Orbit Mini · 64 GB']
+const servicios = ['Consulta general · 30 min', 'Vacunación · 20 min', 'Control preventivo · 25 min', 'Revisión dental · 30 min']
 
 export function Paso6() {
   const insets = useSafeAreaInsets()
@@ -9,14 +9,14 @@ export function Paso6() {
   return (
     <SafeAreaView style={styles.pantalla}>
       <View style={styles.cabecera}>
-        <Text style={styles.titulo}>MoviTech</Text>
-        <Text style={styles.meta}>4 equipos destacados</Text>
+        <Text style={styles.titulo}>Veterinaria Huellitas</Text>
+        <Text style={styles.meta}>4 servicios disponibles</Text>
       </View>
       <ScrollView contentContainerStyle={styles.contenido}>
-        {equipos.map((equipo) => (
-          <View key={equipo} style={styles.fila}>
+        {servicios.map((servicio) => (
+          <View key={servicio} style={styles.fila}>
             <View style={styles.punto} />
-            <Text style={styles.modelo}>{equipo}</Text>
+            <Text style={styles.modelo}>{servicio}</Text>
           </View>
         ))}
         <View style={styles.debug}>
@@ -26,7 +26,7 @@ export function Paso6() {
         </View>
       </ScrollView>
       <View style={[styles.pie, { paddingBottom: insets.bottom + 8 }]}>
-        <Text style={styles.pieTexto}>Envío gratis en compras seleccionadas</Text>
+        <Text style={styles.pieTexto}>Agenda tu cita y cuida la salud de tu mascota</Text>
       </View>
     </SafeAreaView>
   )
