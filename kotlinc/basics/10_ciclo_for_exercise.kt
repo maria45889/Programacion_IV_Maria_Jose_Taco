@@ -1,3 +1,8 @@
+data class Portal(
+    val nombre: Sring,
+    val energia: Int
+)
+
 fun main(){
     var presupuestoTotal = 0.0
     println("Presupuesto de Expedicion")
@@ -16,3 +21,13 @@ fun main(){
     }
     println("Presupuesto total de la expedicion $presupuestoTotal creditos")
 }
+
+
+val portales = arrayOf(
+    Portal("Tierra", 30)
+    Portal("Marte", 65)
+    Portal("Sartuno", 95)
+    Portal("Jupiter", )
+    Portal("Neptuno", 130)
+
+)
