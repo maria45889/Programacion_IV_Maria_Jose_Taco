@@ -1,52 +1,69 @@
 fun main() {
     val portales = mutableListOf("Tierra", "Marte", "Saturno")
-
     var option: Int
+
     do {
         println("Laboratorio de Apellido Nombre")
         println("1. Agregar Portal")
         println("2. Mostrar Portales")
         println("3. Modificar Portal")
         println("4. Eliminar Portal")
-        println("5. Agregar Portal")
+        println("5. Salir")
+        print("Elige una opción: ")
+
         option = readLine()!!.toInt()
+
         when (option) {
             1 -> {
+                print("Nombre del portal: ")
                 val nombre = readLine()!!
                 portales.add(nombre)
                 println("Portal incluido")
-
-
             }
 
-      
             2 -> {
-                println("Portales")
+                println("Portales:")
                 for (portal in portales) {
                     println("Portal: $portal")
                 }
             }
+
             3 -> {
-                println("Actualizar")
-                println("Indice de modificar")
+                println("Índice del portal que deseas modificar:")
                 for (indice in portales.indices) {
                     println("$indice: ${portales[indice]}")
                 }
+
                 val indice = readLine()!!.toInt()
+
                 if (indice in portales.indices) {
-                    println("Nuevo nombre del portal")
+                    print("Nuevo nombre del portal: ")
                     val nuevoNombre = readLine()!!
                     portales[indice] = nuevoNombre
                     println("Portal actualizado")
-                } else{
-                    println("Indice no valido")
-                }   
+                } else {
+                    println("Índice no válido")
+                }
             }
-            4 -> {
-                println("Eliminar ")
 
-                }   
+            4 -> {
+                println("Índice del portal que deseas eliminar:")
+                for (indice in portales.indices) {
+                    println("$indice: ${portales[indice]}")
+                }
+
+                val indice = readLine()!!.toInt()
+
+                if (indice in portales.indices) {
+                    portales.removeAt(indice)
+                    println("Portal eliminado")
+                } else {
+                    println("Índice no válido")
+                }
             }
+
+            5 -> println("Saliendo del laboratorio")
+            else -> println("Opción no válida")
         }
     } while (option != 5)
 }
