@@ -1,11 +1,11 @@
 {
   "expo": {
     "name": "Huellitas Components",
-    "slug": "movitech-components",
+    "slug": "huellitas-components",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/images/icon.png",
-    "scheme": "movitechcomponents",
+    "scheme": "huellitascomponents",
     "userInterfaceStyle": "automatic",
     "ios": {
       "icon": "./assets/images/icon.png"
@@ -18,7 +18,7 @@
         "monochromeImage": "./assets/images/android-icon-monochrome.png"
       },
       "predictiveBackGestureEnabled": false,
-      "package": "com.anonymous.movitechcomponents"
+      "package": "com.anonymous.huellitascomponents"
     },
     "web": {
       "output": "server",

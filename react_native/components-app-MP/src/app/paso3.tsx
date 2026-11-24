@@ -57,7 +57,7 @@ function FilaCita({ mascota, servicio, estado, hora }: FilaCitaProps) {
   return (
     <View style={estilos3.fila}>
       <View style={estilos3.infoIzq}>
-        <Text style={estilos3.nombreEquipo}>{mascota}</Text>
+        <Text style={estilos3.nombreMascota}>{mascota}</Text>
         <Text style={estilos3.ipTexto}>{servicio}</Text>
       </View>
       <View style={estilos3.infoDer}>
@@ -111,7 +111,7 @@ const estilos3 = StyleSheet.create({
   },
   infoIzq: { gap: 2 },
   infoDer: { alignItems: 'flex-end', gap: 4 },
-  nombreEquipo: { fontSize: 14, fontWeight: '600', color: '#1a1a1a' },
+  nombreMascota: { fontSize: 14, fontWeight: '600', color: '#1a1a1a' },
   ipTexto: { fontSize: 12, color: '#90a4ae', fontFamily: 'monospace' },
   latencia: { fontSize: 11, color: '#546e7a' },
   badge: {

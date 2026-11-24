@@ -12,7 +12,7 @@ interface TarjetaPacienteProps {
 function TarjetaPaciente({ nombre, especie, raza, edad, vacunas }: TarjetaPacienteProps) {
   return (
     <View style={styles.tarjeta}>
-      <Text style={styles.nombreEquipo}>{nombre}</Text>
+      <Text style={styles.nombrePaciente}>{nombre}</Text>
       <Text style={styles.datoDireccion}>Especie: {especie}</Text>
       <Text style={styles.datoSistema}>Raza: {raza}</Text>
       <Text style={styles.datoRegion}>Edad: {edad} años</Text>
@@ -79,7 +79,7 @@ const styles = StyleSheet.create({
     shadowOffset: { width: 0, height: 2 },
     elevation: 2,
   },
-  nombreEquipo: {
+  nombrePaciente: {
     fontSize: 16,
     fontWeight: '600',
     color: '#1a1a1a',
