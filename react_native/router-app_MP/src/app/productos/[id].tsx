@@ -77,15 +77,15 @@ export default function DetalleProducto() {
 }
 
 const styles = StyleSheet.create({
-  pantalla: { backgroundColor: '#f4f7fb', flex: 1 },
+  pantalla: { backgroundColor: '#f5f8f6', flex: 1 },
   contenido: { gap: 16, padding: 16 },
   centrado: { alignItems: 'center', flex: 1, gap: 12, justifyContent: 'center' },
   error: { color: '#b42318', fontSize: 16 },
-  enlace: { color: '#087e8b', fontSize: 14, fontWeight: '700' },
-  encabezado: { backgroundColor: '#087e8b', borderRadius: 14, gap: 7, padding: 20 },
-  marca: { color: '#c4f1ed', fontSize: 11, fontWeight: '800', letterSpacing: 1.5 },
+  enlace: { color: '#23483e', fontSize: 14, fontWeight: '700' },
+  encabezado: { backgroundColor: '#12372f', borderRadius: 14, gap: 7, padding: 20 },
+  marca: { color: '#e7b75c', fontSize: 11, fontWeight: '800', letterSpacing: 1.5 },
   nombre: { color: '#fff', fontSize: 24, fontWeight: '800' },
-  descripcion: { color: '#e0f2f1', fontSize: 13, lineHeight: 19 },
+  descripcion: { color: '#cfddd8', fontSize: 13, lineHeight: 19 },
   precio: { color: '#fff', fontSize: 22, fontWeight: '800', marginTop: 8 },
   seccion: { backgroundColor: '#fff', borderRadius: 12, gap: 12, padding: 16 },
   tituloSeccion: { color: '#627d98', fontSize: 11, fontWeight: '800', letterSpacing: 1 },
