@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "Huellitas Components",
-    "slug": "huellitas-components",
+    "name": "Consultorio Veterinario Huellitas",
+    "slug": "consultorio-veterinario-huellitas",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/images/icon.png",
@@ -29,7 +29,7 @@
       [
         "expo-splash-screen",
         {
-          "backgroundColor": "#208AEF",
+          "backgroundColor": "#167D7A",
           "image": "./assets/images/splash-icon.png",
           "imageWidth": 76
         }

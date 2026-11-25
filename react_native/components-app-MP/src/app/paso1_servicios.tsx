@@ -49,7 +49,7 @@ export function Paso1() {
 const styles = StyleSheet.create({
   fondo: {
     flex: 1,
-    backgroundColor: '#f0f4f8',
+    backgroundColor: '#F4F7F8',
     padding: 20,
     paddingTop: 60,
     gap: 12,
@@ -57,11 +57,11 @@ const styles = StyleSheet.create({
   encabezado: {
     fontSize: 22,
     fontWeight: '700',
-    color: '#000000',
+    color: '#17324D',
     marginBottom: 4,
   },
   tarjeta: {
-    backgroundColor: '#ffffff',
+    backgroundColor: '#FFFFFF',
     borderRadius: 10,
     padding: 16,
     gap: 4,
@@ -74,15 +74,15 @@ const styles = StyleSheet.create({
   nombreAccesorio: {
     fontSize: 18,
     fontWeight: '700',
-    color: '#1a1a1a',
+    color: '#17324D',
   },
   datoOcupacion: {
     fontSize: 14,
-    color: '#0d47a1',
+    color: '#167D7A',
   },
   datoFrase: {
     fontSize: 13,
     fontStyle: 'italic',
-    color: '#424242',
+    color: '#607786',
   },
 })

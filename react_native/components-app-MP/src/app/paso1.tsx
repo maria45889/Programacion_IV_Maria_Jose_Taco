@@ -52,7 +52,7 @@ export function Paso1() {
 const styles = StyleSheet.create({
   fondo: {
     flex: 1,
-    backgroundColor: '#f0f4f8',
+    backgroundColor: '#F4F7F8',
     padding: 20,
     paddingTop: 60,
     gap: 12,
@@ -65,7 +65,7 @@ const styles = StyleSheet.create({
   encabezado: {
     fontSize: 20,
     fontWeight: '700',
-    color: '#1a237e',
+    color: '#17324D',
     marginBottom: 4,
   },
   tarjeta: {
@@ -86,7 +86,7 @@ const styles = StyleSheet.create({
   },
   datoDireccion: {
     fontSize: 13,
-    color: '#1565c0',
+    color: '#167D7A',
     fontFamily: 'monospace',
   },
   datoSistema: {

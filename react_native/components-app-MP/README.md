@@ -1,4 +1,4 @@
-# Huellitas Components
+# Consultorio Veterinario Huellitas
 
 Proyecto de ejemplo en Expo y React Native para un consultorio veterinario. Incluye ejemplos de componentes, props, composición, estados, listas desplazables y modales de confirmación con pacientes, citas y servicios veterinarios.
 
