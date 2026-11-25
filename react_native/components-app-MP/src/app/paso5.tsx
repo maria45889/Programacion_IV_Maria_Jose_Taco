@@ -101,25 +101,25 @@ export function Paso5() {
 const estilos5 = StyleSheet.create({
   safeArea: {
     flex: 1,
-    backgroundColor: '#f0f4f8',
+    backgroundColor: '#F4F7F8',
     padding: 24,
     paddingTop: 60,
   },
   titulo: {
     fontSize: 22,
     fontWeight: '700',
-    color: '#1a237e',
+    color: '#17324D',
   },
   subtitulo: {
     fontSize: 14,
-    color: '#546e7a',
+    color: '#607786',
     marginTop: 4,
     marginBottom: 32,
     fontFamily: 'monospace',
   },
   acciones: { gap: 12 },
   botonAccion: {
-    backgroundColor: '#b71c1c',
+    backgroundColor: '#167D7A',
     borderRadius: 10,
     paddingVertical: 14,
     alignItems: 'center',
@@ -131,12 +131,12 @@ const estilos5 = StyleSheet.create({
   },
   resultado: {
     marginTop: 24,
-    backgroundColor: '#e8f5e9',
+    backgroundColor: '#D7ECE8',
     borderRadius: 8,
     padding: 14,
   },
   textoResultado: {
-    color: '#2e7d32',
+    color: '#167D7A',
     fontSize: 13,
     fontFamily: 'monospace',
   },
@@ -184,7 +184,7 @@ const estilos5 = StyleSheet.create({
     backgroundColor: '#f5f5f5',
   },
   botonConfirmar: {
-    backgroundColor: '#b71c1c',
+    backgroundColor: '#167D7A',
   },
   textoCancelar: {
     color: '#424242',

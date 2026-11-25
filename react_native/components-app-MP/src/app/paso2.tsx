@@ -57,7 +57,7 @@ export function Paso2() {
 const estilos2 = StyleSheet.create({
   fondo: {
     flex: 1,
-    backgroundColor: '#f0f4f8',
+    backgroundColor: '#F4F7F8',
     padding: 20,
     paddingTop: 60,
     gap: 16,
@@ -65,7 +65,7 @@ const estilos2 = StyleSheet.create({
   titulo: {
     fontSize: 20,
     fontWeight: '700',
-    color: '#1a237e',
+    color: '#17324D',
   },
   card: {
     backgroundColor: '#ffffff',
@@ -78,7 +78,7 @@ const estilos2 = StyleSheet.create({
     elevation: 3,
   },
   cardCabecera: {
-    backgroundColor: '#1565c0',
+    backgroundColor: '#167D7A',
     paddingHorizontal: 16,
     paddingVertical: 12,
     gap: 2,
@@ -90,7 +90,7 @@ const estilos2 = StyleSheet.create({
   },
   cardSubtitulo: {
     fontSize: 12,
-    color: '#bbdefb',
+    color: '#D7ECE8',
   },
   cardCuerpo: {
     padding: 12,
@@ -103,7 +103,7 @@ const estilos2 = StyleSheet.create({
   },
   etiqueta: {
     fontSize: 13,
-    color: '#546e7a',
+    color: '#607786',
     fontWeight: '500',
   },
   valor: {

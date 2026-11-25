@@ -1,6 +1,6 @@
 // app/index.tsx
 import { StyleSheet, Text, View } from 'react-native'
-import { Paso1 } from './paso1'
+import { Paso1 as Paso1Servicios } from './paso1_servicios'
 import { Paso2 } from './paso2'
 import { Paso3 } from './paso3'
 import { Paso4 } from './paso4'
@@ -15,12 +15,12 @@ import { Paso6 } from './paso6'
 // │  5  Paso 5  Modal de confirmación                               │
 // │  6  Paso 6  Pantalla completa — ficha de paciente                │
 // └──────────────────────────────────────────────────────────────────┘
-const PASO: number = 5
+const PASO: number = 1
 
 export default function Index() {
   switch (PASO) {
     case 1:
-      return <Paso1 />
+      return <Paso1Servicios />
     case 2:
       return <Paso2 />
     case 3:

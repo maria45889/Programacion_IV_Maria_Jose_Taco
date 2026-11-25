@@ -11,9 +11,9 @@ interface BadgeEstadoProps {
 }
 
 const COLOR_ESTADO: Record<EstadoCita, { fondo: string; texto: string }> = {
-  confirmada: { fondo: '#e8f5e9', texto: '#2e7d32' },
+  confirmada: { fondo: '#D7ECE8', texto: '#167D7A' },
   'en espera': { fondo: '#fff8e1', texto: '#f57f17' },
-  'en consulta': { fondo: '#e3f2fd', texto: '#1565c0' },
+  'en consulta': { fondo: '#D7ECE8', texto: '#167D7A' },
   atendida: { fondo: '#f5f5f5', texto: '#616161' },
   cancelada: { fondo: '#fce4ec', texto: '#c62828' },
 }
@@ -57,7 +57,7 @@ function FilaCita({ mascota, servicio, estado, hora }: FilaCitaProps) {
   return (
     <View style={estilos3.fila}>
       <View style={estilos3.infoIzq}>
-        <Text style={estilos3.nombreEquipo}>{mascota}</Text>
+        <Text style={estilos3.nombreMascota}>{mascota}</Text>
         <Text style={estilos3.ipTexto}>{servicio}</Text>
       </View>
       <View style={estilos3.infoDer}>
@@ -84,7 +84,7 @@ export function Paso3() {
 const estilos3 = StyleSheet.create({
   fondo: {
     flex: 1,
-    backgroundColor: '#f0f4f8',
+    backgroundColor: '#F4F7F8',
     padding: 20,
     paddingTop: 60,
     gap: 8,
@@ -92,7 +92,7 @@ const estilos3 = StyleSheet.create({
   titulo: {
     fontSize: 20,
     fontWeight: '700',
-    color: '#1a237e',
+    color: '#17324D',
     marginBottom: 8,
   },
   fila: {
@@ -111,9 +111,9 @@ const estilos3 = StyleSheet.create({
   },
   infoIzq: { gap: 2 },
   infoDer: { alignItems: 'flex-end', gap: 4 },
-  nombreEquipo: { fontSize: 14, fontWeight: '600', color: '#1a1a1a' },
-  ipTexto: { fontSize: 12, color: '#90a4ae', fontFamily: 'monospace' },
-  latencia: { fontSize: 11, color: '#546e7a' },
+  nombreMascota: { fontSize: 14, fontWeight: '600', color: '#1a1a1a' },
+  ipTexto: { fontSize: 12, color: '#607786', fontFamily: 'monospace' },
+  latencia: { fontSize: 11, color: '#607786' },
   badge: {
     flexDirection: 'row',
     alignItems: 'center',

@@ -80,22 +80,22 @@ export function Paso6() {
           <View style={estilos6.gridAcciones}>
             <BotonAccion
               etiqueta="Registrar vacuna"
-              color="#1565c0"
+              color="#167D7A"
               onPress={() => pedirConfirmacion('Registro de vacuna')}
             />
             <BotonAccion
               etiqueta="Iniciar consulta"
-              color="#b71c1c"
+              color="#E58A72"
               onPress={() => pedirConfirmacion('Inicio de consulta')}
             />
             <BotonAccion
               etiqueta="Actualizar historia"
-              color="#2e7d32"
+              color="#2F8F83"
               onPress={() => pedirConfirmacion('Actualización de historia clínica')}
             />
             <BotonAccion
               etiqueta="Agendar control"
-              color="#6a1b9a"
+              color="#17324D"
               onPress={() => pedirConfirmacion('Agenda de control')}
             />
           </View>
@@ -126,7 +126,7 @@ export function Paso6() {
 const estilos6 = StyleSheet.create({
   safeArea: {
     flex: 1,
-    backgroundColor: '#f0f4f8',
+    backgroundColor: '#F4F7F8',
   },
   cabecera: {
     flexDirection: 'row',
@@ -141,11 +141,11 @@ const estilos6 = StyleSheet.create({
   cabNombre: {
     fontSize: 18,
     fontWeight: '700',
-    color: '#1a237e',
+    color: '#17324D',
   },
   cabIp: {
     fontSize: 12,
-    color: '#78909c',
+    color: '#607786',
     fontFamily: 'monospace',
     marginTop: 2,
   },

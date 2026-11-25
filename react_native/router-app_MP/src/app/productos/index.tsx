@@ -32,7 +32,7 @@ export default function ListaProductos() {
             style={({ pressed }) => [styles.tarjeta, pressed && styles.presionada]}
             onPress={() => router.push(`/productos/${item.id}`)}
           >
-            <View style={styles.icono}><Text style={styles.iconoTexto}>🐾</Text></View>
+            <View style={styles.icono}><Text style={styles.iconoTexto}>{item.nombre.charAt(0)}</Text></View>
             <View style={styles.info}>
               <Text style={styles.marca}>{item.categoria}</Text>
               <Text style={styles.nombre}>{item.nombre}</Text>
@@ -52,19 +52,19 @@ export default function ListaProductos() {
 }
 
 const styles = StyleSheet.create({
-  pantalla: { backgroundColor: '#f4f7fb', flex: 1 },
+  pantalla: { backgroundColor: '#f5f8f6', flex: 1 },
   lista: { gap: 10, padding: 16 },
   encabezado: { gap: 5, marginBottom: 8 },
-  titulo: { color: '#102a43', fontSize: 22, fontWeight: '800' },
-  subtitulo: { color: '#627d98', fontSize: 13 },
-  tarjeta: { alignItems: 'center', backgroundColor: '#fff', borderColor: '#d9e2ec', borderRadius: 12, borderWidth: 1, flexDirection: 'row', gap: 12, padding: 13 },
-  presionada: { backgroundColor: '#e0f2f1' },
-  icono: { alignItems: 'center', backgroundColor: '#e0f2f1', borderRadius: 10, height: 48, justifyContent: 'center', width: 48 },
-  iconoTexto: { color: '#087e8b', fontSize: 24 },
+  titulo: { color: '#12372f', fontSize: 22, fontWeight: '800' },
+  subtitulo: { color: '#64766f', fontSize: 13, lineHeight: 19 },
+  tarjeta: { alignItems: 'center', backgroundColor: '#fff', borderColor: '#dce6e1', borderRadius: 14, borderWidth: 1, flexDirection: 'row', gap: 12, padding: 13 },
+  presionada: { backgroundColor: '#edf3ef' },
+  icono: { alignItems: 'center', backgroundColor: '#edf3ef', borderRadius: 10, height: 48, justifyContent: 'center', width: 48 },
+  iconoTexto: { color: '#23483e', fontSize: 18, fontWeight: '900' },
   info: { flex: 1, gap: 2 },
-  marca: { color: '#627d98', fontSize: 10, fontWeight: '700' },
-  nombre: { color: '#102a43', fontSize: 15, fontWeight: '700' },
-  memoria: { color: '#627d98', fontSize: 11 },
-  precio: { color: '#087e8b', fontSize: 14, fontWeight: '800' },
-  enlace: { color: '#087e8b', fontSize: 14, padding: 16, textAlign: 'center' },
+  marca: { color: '#64766f', fontSize: 10, fontWeight: '700' },
+  nombre: { color: '#1c3029', fontSize: 15, fontWeight: '700' },
+  memoria: { color: '#64766f', fontSize: 11 },
+  precio: { color: '#23483e', fontSize: 14, fontWeight: '800' },
+  enlace: { color: '#23483e', fontSize: 14, padding: 16, textAlign: 'center' },
 })

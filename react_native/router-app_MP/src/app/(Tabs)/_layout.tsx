@@ -6,10 +6,10 @@ export default function TabsLayout() {
   return (
     <Tabs
       screenOptions={{
-        tabBarActiveTintColor:   '#087e8b',
-        tabBarInactiveTintColor: '#90a4ae',
-        tabBarStyle:             { backgroundColor: '#ffffff', borderTopColor: '#d9e2ec' },
-        headerStyle:             { backgroundColor: '#087e8b' },
+        tabBarActiveTintColor:   '#12372f',
+        tabBarInactiveTintColor: '#7a8e86',
+        tabBarStyle:             { backgroundColor: '#ffffff', borderTopColor: '#dce6e1' },
+        headerStyle:             { backgroundColor: '#12372f' },
         headerTintColor:         '#ffffff',
         headerTitleStyle:        { fontWeight: '700' },
       }}
@@ -49,9 +49,9 @@ export default function TabsLayout() {
 // Icono simple con texto hasta que se instalen íconos vectoriales
 function TabIcon({ nombre, color, size }: { nombre: string; color: TextStyle['color']; size: number }) {
   const icono: Record<string, string> = {
-    inicio:   '🐾',
-    alertas:  '💉',
-    ajustes:  '🩺',
+    inicio: 'I',
+    alertas: 'P',
+    ajustes: 'A',
   }
   return (
     <Text style={{ fontSize: size * 0.8, color }}>{icono[nombre]}</Text>

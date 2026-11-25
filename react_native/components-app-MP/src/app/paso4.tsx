@@ -21,9 +21,9 @@ interface BarraUsoProps {
 }
 
 function BarraUso({ porcentaje, etiqueta }: BarraUsoProps) {
-  const color = porcentaje > 85 ? '#c62828'
+  const color = porcentaje > 85 ? '#C75D5D'
               : porcentaje > 60 ? '#f57f17'
-              : '#2e7d32'
+              : '#167D7A'
   return (
     <View style={estilos4.barraFila}>
       <Text style={estilos4.barraEtiqueta}>{etiqueta}</Text>
@@ -71,23 +71,23 @@ export function Paso4() {
 const estilos4 = StyleSheet.create({
   safeArea: {
     flex: 1,
-    backgroundColor: '#0d1b2a',
+    backgroundColor: '#102A43',
   },
   header: {
     paddingHorizontal: 20,
     paddingTop: 16,
     paddingBottom: 12,
     borderBottomWidth: 1,
-    borderBottomColor: '#1c2e40',
+    borderBottomColor: '#24506A',
   },
   headerTitulo: {
     fontSize: 20,
     fontWeight: '700',
-    color: '#e3f2fd',
+    color: '#F4F7F8',
   },
   headerSub: {
     fontSize: 12,
-    color: '#78909c',
+    color: '#BCCBD4',
     marginTop: 2,
   },
   scroll: { flex: 1 },
@@ -97,12 +97,12 @@ const estilos4 = StyleSheet.create({
     paddingBottom: 40,
   },
   nodo: {
-    backgroundColor: '#132232',
+    backgroundColor: '#17324D',
     borderRadius: 10,
     padding: 14,
     gap: 8,
     borderWidth: 1,
-    borderColor: '#1c3548',
+    borderColor: '#24506A',
   },
   nodoEncabezado: {
     flexDirection: 'row',
@@ -112,16 +112,16 @@ const estilos4 = StyleSheet.create({
   nodoNombre: {
     fontSize: 14,
     fontWeight: '700',
-    color: '#e3f2fd',
+    color: '#F4F7F8',
   },
   nodoIp: {
     fontSize: 12,
-    color: '#4fc3f7',
+    color: '#56BEB6',
     fontFamily: 'monospace',
   },
   nodoOs: {
     fontSize: 11,
-    color: '#546e7a',
+    color: '#BCCBD4',
     marginBottom: 2,
   },
   barraFila: {
@@ -131,13 +131,13 @@ const estilos4 = StyleSheet.create({
   },
   barraEtiqueta: {
     fontSize: 11,
-    color: '#78909c',
+    color: '#BCCBD4',
     width: 28,
   },
   barraFondo: {
     flex: 1,
     height: 4,
-    backgroundColor: '#1c3548',
+    backgroundColor: '#24506A',
     borderRadius: 2,
     overflow: 'hidden',
   },

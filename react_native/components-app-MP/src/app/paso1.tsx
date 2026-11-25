@@ -12,7 +12,7 @@ interface TarjetaPacienteProps {
 function TarjetaPaciente({ nombre, especie, raza, edad, vacunas }: TarjetaPacienteProps) {
   return (
     <View style={styles.tarjeta}>
-      <Text style={styles.nombreEquipo}>{nombre}</Text>
+      <Text style={styles.nombrePaciente}>{nombre}</Text>
       <Text style={styles.datoDireccion}>Especie: {especie}</Text>
       <Text style={styles.datoSistema}>Raza: {raza}</Text>
       <Text style={styles.datoRegion}>Edad: {edad} años</Text>
@@ -52,7 +52,7 @@ export function Paso1() {
 const styles = StyleSheet.create({
   fondo: {
     flex: 1,
-    backgroundColor: '#f0f4f8',
+    backgroundColor: '#F4F7F8',
     padding: 20,
     paddingTop: 60,
     gap: 12,
@@ -65,7 +65,7 @@ const styles = StyleSheet.create({
   encabezado: {
     fontSize: 20,
     fontWeight: '700',
-    color: '#1a237e',
+    color: '#17324D',
     marginBottom: 4,
   },
   tarjeta: {
@@ -79,14 +79,14 @@ const styles = StyleSheet.create({
     shadowOffset: { width: 0, height: 2 },
     elevation: 2,
   },
-  nombreEquipo: {
+  nombrePaciente: {
     fontSize: 16,
     fontWeight: '600',
     color: '#1a1a1a',
   },
   datoDireccion: {
     fontSize: 13,
-    color: '#1565c0',
+    color: '#167D7A',
     fontFamily: 'monospace',
   },
   datoSistema: {

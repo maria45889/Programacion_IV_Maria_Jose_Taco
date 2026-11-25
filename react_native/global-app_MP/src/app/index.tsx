@@ -18,10 +18,18 @@ export default function CatalogoScreen() {
       ListHeaderComponent={
         <View style={styles.encabezado}>
           <Text style={styles.marca}>VETERINARIA HUELLITAS</Text>
-          <Text style={styles.titulo}>Productos para el cuidado de tu mascota</Text>
-          <Text style={styles.subtitulo}>
-            Productos y carrito comparten el mismo estado global.
-          </Text>
+          <Text style={styles.titulo}>Cuidado diario para Luna</Text>
+          <View style={styles.servicio}>
+            <View>
+              <Text style={styles.servicioEtiqueta}>PRÓXIMA CITA</Text>
+              <Text style={styles.servicioTitulo}>Control general</Text>
+              <Text style={styles.servicioDetalle}>26 nov · 10:30 · Dr. Pérez</Text>
+            </View>
+            <View style={styles.sello}>
+              <Text style={styles.selloTexto}>H</Text>
+            </View>
+          </View>
+          <Text style={styles.seccionTitulo}>Productos recomendados</Text>
         </View>
       }
       renderItem={({ item }) => {
@@ -31,7 +39,7 @@ export default function CatalogoScreen() {
         return (
           <View style={styles.tarjeta}>
             <View style={styles.icono}>
-              <Text style={styles.iconoTexto}>🐾</Text>
+              <Text style={styles.iconoTexto}>H</Text>
             </View>
             <View style={styles.detalles}>
               <Text style={styles.fabricante}>{item.fabricante}</Text>
@@ -64,20 +72,34 @@ export default function CatalogoScreen() {
 }
 
 const styles = StyleSheet.create({
-  pantalla: { flex: 1, backgroundColor: '#f4f7fb' },
-  contenido: { padding: 18, gap: 14 },
+  pantalla: { flex: 1, backgroundColor: '#F8F6EF' },
+  contenido: { padding: 20, paddingBottom: 36, gap: 14, maxWidth: 800, width: '100%', alignSelf: 'center' },
   encabezado: { gap: 6, marginBottom: 8 },
-  marca: { color: '#087e8b', fontSize: 12, fontWeight: '800', letterSpacing: 2 },
-  titulo: { color: '#102a43', fontSize: 24, fontWeight: '800' },
-  subtitulo: { color: '#627d98', fontSize: 14, lineHeight: 20 },
+  marca: { color: '#173F38', fontSize: 12, fontWeight: '800', letterSpacing: 1.5 },
+  titulo: { color: '#173F38', fontSize: 32, lineHeight: 38, fontWeight: '800', marginBottom: 8 },
+  servicio: {
+    alignItems: 'center',
+    backgroundColor: '#173F38',
+    borderRadius: 18,
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    marginBottom: 12,
+    padding: 18,
+  },
+  servicioEtiqueta: { color: '#BCD7C6', fontSize: 11, fontWeight: '800', letterSpacing: 1.2 },
+  servicioTitulo: { color: '#FFFFFF', fontSize: 18, fontWeight: '800', marginTop: 5 },
+  servicioDetalle: { color: '#E8F3EC', fontSize: 13, marginTop: 4 },
+  sello: { alignItems: 'center', backgroundColor: '#F2A65A', borderRadius: 22, height: 44, justifyContent: 'center', width: 44 },
+  selloTexto: { color: '#173F38', fontSize: 16, fontWeight: '900' },
+  seccionTitulo: { color: '#173F38', fontSize: 20, fontWeight: '800', marginTop: 4 },
   tarjeta: {
     flexDirection: 'row',
     gap: 14,
     padding: 14,
-    borderRadius: 16,
-    backgroundColor: '#fff',
+    borderRadius: 14,
+    backgroundColor: '#FFFFFF',
     borderWidth: 1,
-    borderColor: '#d9e2ec',
+    borderColor: '#D6DDD7',
   },
   icono: {
     width: 58,
@@ -85,20 +107,20 @@ const styles = StyleSheet.create({
     borderRadius: 12,
     alignItems: 'center',
     justifyContent: 'center',
-    backgroundColor: '#e0f2f1',
+    backgroundColor: '#E8F3EC',
   },
-  iconoTexto: { color: '#087e8b', fontSize: 30, fontWeight: '700' },
+  iconoTexto: { color: '#173F38', fontSize: 22, fontWeight: '900' },
   detalles: { flex: 1, gap: 4 },
-  fabricante: { color: '#627d98', fontSize: 11, fontWeight: '700', letterSpacing: 1 },
-  modelo: { color: '#102a43', fontSize: 17, fontWeight: '800' },
-  descripcion: { color: '#627d98', fontSize: 12 },
+  fabricante: { color: '#728178', fontSize: 11, fontWeight: '700', letterSpacing: 1 },
+  modelo: { color: '#173F38', fontSize: 17, fontWeight: '800' },
+  descripcion: { color: '#5F7168', fontSize: 13 },
   filaPrecio: { flexDirection: 'row', justifyContent: 'space-between', marginTop: 4 },
-  precio: { color: '#087e8b', fontSize: 17, fontWeight: '800' },
-  stock: { color: '#627d98', fontSize: 11, alignSelf: 'center' },
+  precio: { color: '#173F38', fontSize: 17, fontWeight: '800' },
+  stock: { color: '#728178', fontSize: 11, alignSelf: 'center' },
   boton: {
     alignItems: 'center',
-    backgroundColor: '#087e8b',
-    borderRadius: 9,
+    backgroundColor: '#173F38',
+    borderRadius: 10,
     marginTop: 5,
     paddingVertical: 10,
   },
